@@ -1,16 +1,82 @@
-import React from 'react'
+import React from "react";
+import logo from "/images/logo.png";
 
 const Navbar = () => {
   return (
-    <div>
-      <header>
-        {/* logo */}
-        <div></div>
-        {/* Branding D */}
-        <div></div>
-      </header>
-    </div>
-  )
-}
+    <header className="px-20 py-6 w-full bg-black text-white flex justify-between items-start">
+      {/* logo */}
+      <div className="cursor-pointer">
+        <a href="https://google.com" target="_blank" rel="noreferrer">
+          <img src={logo} height={100} width={160} alt="Logo" />
+        </a>
+      </div>
+      {/* Branding D */}
+      {/* First Links */}
+      <div className="flex flex-col gap-2">
+        <div
+          className="text-sm text-white no-underline hover:opacity-70 transition"
+        >
+          Branding Studio
+        </div>
 
-export default Navbar
+        <a
+          href="/"
+          className="text-sm text-white no-underline hover:opacity-70 transition"
+        >
+          Design News
+        </a>
+      </div>
+
+      {/* Second Links */}
+      <div className="flex flex-col gap-2">
+        <a
+          href="/"
+          className="text-sm text-white no-underline hover:opacity-70 transition"
+        >
+          Work
+        </a>
+
+        <a
+          href="/"
+          className="text-sm text-white no-underline hover:opacity-70 transition"
+        >
+          About
+        </a>
+
+        <a
+          href="/"
+          className="text-sm text-white no-underline hover:opacity-70 transition"
+        >
+          Services
+        </a>
+      </div>
+
+      {/* Social Links */}
+      <div className="flex flex-col gap-2">
+        <a
+          href="/"
+          className="text-sm text-white no-underline hover:opacity-70 transition"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="/"
+          className="text-sm text-white no-underline hover:opacity-70 transition"
+        >
+          Linkedin
+        </a>
+      </div>
+
+      {/* Button */}
+      <button
+        className="bg-white text-black border-none px-6 py-3 text-lg cursor-pointer flex items-center gap-3 hover:bg-gray-300 transition"
+      >
+        Lets Talk
+        <span className="text-xl">→</span>
+      </button>
+    </header>
+  );
+};
+
+export default Navbar;
