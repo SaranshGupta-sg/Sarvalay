@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "/images/logo.png";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const Navbar = () => {
   return (
@@ -10,22 +11,8 @@ const Navbar = () => {
           <img src={logo} height={100} width={160} alt="Logo" />
         </a>
       </div>
-      {/* Branding D */}
-      {/* First Links */}
-      <div className="flex flex-col gap-2">
-        <div
-          className="text-sm text-white no-underline hover:opacity-70 transition"
-        >
-          Branding Studio
-        </div>
 
-        <a
-          href="/"
-          className="text-sm text-white no-underline hover:opacity-70 transition"
-        >
-          Design News
-        </a>
-      </div>
+      
 
       {/* Second Links */}
       <div className="flex flex-col gap-2">
@@ -75,6 +62,12 @@ const Navbar = () => {
         Lets Talk
         <span className="text-xl">→</span>
       </button>
+
+      <div className="ham-menu hidden">
+        <button>
+            <GiHamburgerMenu />
+        </button>
+      </div>
     </header>
   );
 };
