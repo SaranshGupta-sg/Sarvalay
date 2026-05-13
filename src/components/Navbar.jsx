@@ -1,52 +1,83 @@
-
+import { useState } from "react";
 import logo from "/images/logo.png";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoClose } from "react-icons/io5";
 
+const navLinks = [
+  { name: "Work", path: "/" },
+  { name: "About", path: "/" },
+  { name: "Services", path: "/" },
+];
 
 const Navbar = () => {
-  
+  const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <header className="px-20 py-6 w-full bg-black text-white flex justify-between items-start">
-      {/* logo */}
-      <div className="cursor-pointer">
+    <header className="w-full bg-black text-white px-6 sm:px-12 py-4 relative">
+      <div className="flex items-center justify-between">
+        {/* Logo */}
         <a href="https://google.com" target="_blank" rel="noreferrer">
-          <img src={logo} height={100} width={160} alt="Logo" />
+          <img src={logo} alt="Logo" className="w-24 sm:w-40 object-contain" />
         </a>
-      </div>
 
-      <nav className="flex items-center gap-16">
-        <div className="flex gap-10 mr-37">
-        
-            <a
-            href="/"
-            className="text-xl text-white no-underline hover:opacity-70 transition"
-          >
-            Work
-          </a>
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex items-center gap-16">
+          <nav className="flex items-center gap-10">
+            {navLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.path}
+                className="text-lg hover:text-gray-300 transition"
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
 
-          <a
-            href="/"
-            className="text-xl text-white no-underline hover:opacity-70 transition"
-          >
-            About
-          </a>
-
-          <a
-            href="/"
-            className="text-xl text-white no-underline hover:opacity-70 transition"
-          >
-            Services
-          </a>
+          <button className="bg-white text-black px-6 py-3 rounded-full text-lg font-medium hover:bg-gray-200 transition">
+            Let&apos;s Talk →
+          </button>
         </div>
 
-        <button className="bg-white text-black border-none px-6 py-3 text-xl cursor-pointer flex items-center gap-3 hover:bg-gray-300 transition ml-auto">
-          Lets Talk
-          <span className="text-xl">→</span>
+        {/* Hamburger */}
+        <button
+          onClick={() => setShowMenu(!showMenu)}
+          className="lg:hidden text-3xl"
+        >
+          {showMenu ? <IoClose /> : <GiHamburgerMenu />}
         </button>
-         
+      </div>
 
-      </nav>
+      {/* Mobile Menu */}
+      {showMenu && (
+        <div className="fixed top-0 left-0 w-full h-screen bg-black z-50 flex flex-col items-center justify-center gap-10">
+          {/* Close Button */}
+          <button
+            onClick={() => setShowMenu(false)}
+            className="absolute top-6 right-6 text-4xl"
+          >
+            <IoClose />
+          </button>
 
+          {/* Nav Links */}
+          <nav className="flex flex-col items-center gap-8">
+            {navLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.path}
+                className="text-3xl font-medium hover:text-gray-300 transition"
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
+
+          {/* Button */}
+          <button className="bg-white text-black px-8 py-4 rounded-full text-xl font-medium hover:bg-gray-200 transition">
+            Let&apos;s Talk →
+          </button>
+        </div>
+      )}
     </header>
   );
 };
