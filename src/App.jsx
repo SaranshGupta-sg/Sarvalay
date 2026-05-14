@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Carousel from "./components/Carousel";
+import HorizonalScroll from "./components/Projects/HorizonalScroll";
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Navbar />
       <Header />
       <Carousel />
+      <HorizonalScroll />
     </div>
   );
 };
