@@ -13,7 +13,7 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <header className="w-full bg-black text-white px-6 sm:px-12 py-4 relative">
+    <header className="w-full bg-black/70 backdrop-blur-md text-white px-6 sm:px-12 py-4 fixed top-0 left-0 z-50">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <a href="https://google.com" target="_blank" rel="noreferrer">
@@ -42,7 +42,7 @@ const Navbar = () => {
         {/* Hamburger */}
         <button
           onClick={() => setShowMenu(!showMenu)}
-          className="lg:hidden text-3xl"
+          className="lg:hidden text-3xl z-50"
         >
           {showMenu ? <IoClose /> : <GiHamburgerMenu />}
         </button>
@@ -50,7 +50,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {showMenu && (
-        <div className="fixed top-0 left-0 w-full h-screen bg-black z-50 flex flex-col items-center justify-center gap-10">
+        <div className="fixed top-0 left-0 w-full h-screen bg-black z-40 flex flex-col items-center justify-center gap-10">
           {/* Close Button */}
           <button
             onClick={() => setShowMenu(false)}
