@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import Carousel from "./components/Carousel";
-import HorizonalScroll from "./components/Projects/HorizonalScroll";
+import HorizonalScroll from "./components/HorizonalScroll";
 
 const App = () => {
   return (
