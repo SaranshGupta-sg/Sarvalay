@@ -38,8 +38,6 @@ const About = () => {
         bg-black
         text-white
 
-        
-
         py-14
         sm:py-18
         lg:py-22
@@ -93,7 +91,7 @@ const About = () => {
             px-4
             sm:px-8
             md:px-12
-            lg:px-16
+            lg:px-20
 
             py-6
             sm:py-8
