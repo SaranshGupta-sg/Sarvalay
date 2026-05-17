@@ -4,6 +4,8 @@ import Carousel from "./components/Carousel";
 import HorizonalScroll from "./components/HorizonalScroll";
 import Services from "./components/Services";
 import About from "./components/About";
+import Ready from "./components/Ready";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -14,6 +16,8 @@ const App = () => {
       <HorizonalScroll />
       <Services />
       <About />
+      <Ready />
+      <Footer />
     </div>
   );
 };

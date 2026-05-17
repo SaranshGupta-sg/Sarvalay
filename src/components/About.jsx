@@ -1,36 +1,53 @@
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
 const teamMembers = [
   {
     role: "Creative Director",
     name: "CARL GODBOUT",
+    image: "/images/team-1.jpg",
+    color: "bg-orange-500",
   },
 
   {
     role: "Content Strategist",
     name: "CAMILLE BRIÈRE",
+    image: "/images/team-2.jpg",
+    color: "bg-lime-500",
   },
 
   {
     role: "Senior Consultant",
     name: "STÉPHANIE BRUNELLE",
+    image: "/images/team-3.jpg",
+    color: "bg-cyan-500",
   },
 
   {
     role: "CEO & General Director",
     name: "PIERRE-LUC PAIEMENT",
+    image: "/images/team-4.jpg",
+    color: "bg-pink-500",
   },
 
   {
     role: "Strategy Director",
     name: "MICHÈLE RIENDEAU",
+    image: "/images/team-5.jpg",
+    color: "bg-yellow-500",
   },
 
   {
     role: "Lead Consultant",
     name: "MEGGIE LAVOIE",
+    image: "/images/team-6.jpg",
+    color: "bg-violet-500",
   },
 ];
 
 const About = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
   return (
     <section
       className="
@@ -44,16 +61,25 @@ const About = () => {
       "
     >
       {/* Heading */}
-      <div className="mb-16 sm:mb-20 lg:mb-24 px-5
-        sm:px-8
-        md:px-12
-        lg:px-20">
+      <div
+        className="
+          mb-16
+          sm:mb-20
+          lg:mb-24
+
+          px-5
+          sm:px-8
+          md:px-12
+          lg:px-20
+        "
+      >
         <h1
           className="
             text-6xl
             sm:text-7xl
             md:text-8xl
             lg:text-9xl
+
             text-white
             font-light
           "
@@ -80,69 +106,170 @@ const About = () => {
       </div>
 
       {/* Team */}
-      <div className="bg-black text-white">
-      {teamMembers.map((member, index) => (
-        <div
-          key={index}
-          className="
-            border-t
-            border-zinc-700
+      <div className="bg-black text-white border-y border-zinc-700">
+        {teamMembers.map((member, index) => (
+          <motion.div
+            key={index}
+            onHoverStart={() => setActiveIndex(index)}
+            onHoverEnd={() => setActiveIndex(null)}
+            className={`
+              relative
+              overflow-hidden
 
-            px-4
-            sm:px-8
-            md:px-12
-            lg:px-20
+              border-t
+              border-zinc-700
 
-            py-6
-            sm:py-8
-            lg:py-10
+              px-4
+              sm:px-8
+              md:px-12
+              lg:px-20
 
-            flex
-            flex-col
-            md:flex-row
+              py-2
+sm:py-4
+lg:py-5
 
-            md:items-center
-            md:justify-between
+              flex
+              flex-col
+              md:flex-row
 
-            gap-4
-          "
-        >
-          {/* Left */}
-          <p
-            className="
-              text-lg
-              sm:text-xl
-              lg:text-2xl
+              md:items-center
+              md:justify-between
 
-              text-zinc-200
-              font-medium
-            "
+              gap-4
+
+              cursor-pointer
+              duration-500
+              group
+            `}
           >
-            {member.role}
-          </p>
+            {/* Hover Background */}
+            <motion.div
+              initial={{ y: "100%" }}
+              animate={{
+                y: activeIndex === index ? "0%" : "100%",
+              }}
+              transition={{
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className={`
+                absolute
+                inset-0
+                ${member.color}
+                z-0
+              `}
+            />
 
-          {/* Right */}
-          <h2
-            className="
-              text-4xl
-              sm:text-5xl
-              md:text-6xl
-              lg:text-7xl
+            {/* Left */}
+            <p
+              className="
+                relative
+                z-10
 
-              font-medium
-              tracking-tight
+                text-lg
+                sm:text-xl
+                lg:text-2xl
 
-              md:text-right
-            "
-          >
-            {member.name}
-          </h2>
-        </div>
-      ))}
+                font-medium
 
-      {/* Bottom Border */}
-      <div className="border-t border-zinc-700" />
-    </div>
+                transition-colors
+                duration-500
+
+                group-hover:text-black
+              "
+            >
+              {member.role}
+            </p>
+
+            {/* Right */}
+            <div
+              className="
+                relative
+                z-10
+
+                flex
+                items-center
+                gap-5
+              "
+            >
+              {/* Hover Image */}
+              <AnimatePresence>
+                {activeIndex === index && (
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      scale: 0.8,
+                      rotate: -8,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                      rotate: 0,
+                    }}
+                    exit={{
+                      opacity: 0,
+                      scale: 0.8,
+                      rotate: 8,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                    }}
+                    className="
+                      hidden
+                      md:block
+
+                      w-28
+                      h-36
+
+                      lg:w-36
+                      lg:h-44
+
+                      overflow-hidden
+                      rounded-2xl
+                      shrink-0
+                    "
+                  >
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="
+                        w-full
+                        h-full
+                        object-cover
+                      "
+                    />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Name */}
+              <h2
+                className="
+                  relative
+                  z-10
+
+                  text-2xl
+                  sm:text-3xl
+                  md:text-4xl
+                  lg:text-5xl
+
+                  font-medium
+                  tracking-tight
+
+                  md:text-right
+
+                  transition-colors
+                  duration-500
+
+                  group-hover:text-black
+                "
+              >
+                {member.name}
+              </h2>
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </section>
   );
 };
