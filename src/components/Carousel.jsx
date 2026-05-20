@@ -4,26 +4,14 @@ const Carousel = () => {
 
   return (
     <div className="w-full min-h-screen bg-black flex flex-col justify-center overflow-hidden space-y-3 sm:space-y-4">
+      
       {/* Top Row */}
       <div className="overflow-hidden">
         <div className="flex w-max animate-left">
           {[...topRow, ...topRow, ...topRow].map((item, index) => (
             <div
               key={index}
-              className="
-                w-[180px] sm:w-[220px] md:w-[280px]
-                h-[90px] sm:h-[110px] md:h-[140px]
-                bg-[#1f1f1f]
-                rounded-md
-                mx-1
-                flex
-                items-center
-                justify-center
-                text-white
-                text-xl sm:text-2xl md:text-4xl
-                font-bold
-                flex-shrink-0
-              "
+              className="w-[180px] sm:w-[220px] md:w-[280px] h-[90px] sm:h-[110px] md:h-[140px] bg-[#1f1f1f] rounded-md mx-1 flex items-center justify-center text-white text-xl sm:text-2xl md:text-4xl font-bold flex-shrink-0"
             >
               {item}
             </div>
@@ -37,20 +25,7 @@ const Carousel = () => {
           {[...bottomRow, ...bottomRow, ...bottomRow].map((item, index) => (
             <div
               key={index}
-              className="
-                w-[180px] sm:w-[220px] md:w-[280px]
-                h-[90px] sm:h-[110px] md:h-[140px]
-                bg-[#1f1f1f]
-                rounded-md
-                mx-1
-                flex
-                items-center
-                justify-center
-                text-white
-                text-xl sm:text-2xl md:text-4xl
-                font-bold
-                flex-shrink-0
-              "
+              className="w-[180px] sm:w-[220px] md:w-[280px] h-[90px] sm:h-[110px] md:h-[140px] bg-[#1f1f1f] rounded-md mx-1 flex items-center justify-center text-white text-xl sm:text-2xl md:text-4xl font-bold flex-shrink-0"
             >
               {item}
             </div>

@@ -26,26 +26,19 @@ const Ready = () => {
         },
         {
           x: getScrollAmount,
-
           scale: 1,
           opacity: 1,
-
           ease: "none",
 
           scrollTrigger: {
             trigger: containerRef.current,
-
             start: "top top",
 
-            end: () =>
-              `+=${text.scrollWidth + window.innerHeight}`,
+            end: () => `+=${text.scrollWidth + window.innerHeight}`,
 
             scrub: 2,
-
             pin: true,
-
             anticipatePin: 1,
-
             invalidateOnRefresh: true,
 
             // markers: true,
@@ -59,44 +52,12 @@ const Ready = () => {
   return (
     <section
       ref={containerRef}
-      className="
-        h-screen
-        w-full
-
-        bg-[#ececec]
-        text-black
-
-        overflow-hidden
-
-        flex
-        items-center
-      "
+      className="h-screen w-full bg-[#ececec] text-black overflow-hidden flex items-center"
     >
       <div className="w-max">
         <h2
           ref={textRef}
-          className="
-            whitespace-nowrap
-
-            text-[30vw]
-            sm:text-[22vw]
-            md:text-[14vw]
-            lg:text-[10vw]
-
-            leading-none
-            font-light
-            tracking-tight
-
-            pl-[20vw]
-            sm:pl-[15vw]
-            md:pl-[10vw]
-
-            pr-[60vw]
-            sm:pr-[80vw]
-            md:pr-[100vw]
-
-            will-change-transform
-          "
+          className="whitespace-nowrap text-[30vw] sm:text-[22vw] md:text-[14vw] lg:text-[10vw] leading-none font-light tracking-tight pl-[20vw] sm:pl-[15vw] md:pl-[10vw] pr-[60vw] sm:pr-[80vw] md:pr-[100vw] will-change-transform"
         >
           so are you ready to turn some heads?
         </h2>
