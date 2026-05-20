@@ -10,7 +10,8 @@ import Ready from "./components/Ready";
 import Footer from "./components/Footer";
 
 import ProjectsPage from "./components/ProjectsPage";
-import Login from "./components/Login"
+import BookConsultation from "./components/BookConsultation"
+import Artist from "./components/Artist";
 
 const App = () => {
   return (
@@ -19,7 +20,7 @@ const App = () => {
       <Route
         path="/"
         element={
-          <div className="w-full min-h-screen bg-black text-white">
+          <div className="w-full min-h-screen">
             <Navbar />
             <Header />
             <Carousel />
@@ -34,7 +35,8 @@ const App = () => {
 
       {/* Projects Page */}
       <Route path="/projects" element={<div className="w-full min-h-screen bg-black text-white"><ProjectsPage /></div>} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/bookConsultation" element={<BookConsultation />} />
+      <Route path="/artist" element={<Artist />} />
     </Routes>
   );
 };

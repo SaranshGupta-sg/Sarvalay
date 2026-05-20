@@ -30,10 +30,10 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="min-h-screen bg-black text-white px-5 sm:px-8 md:px-12 lg:px-20 py-24 sm:py-28 lg:py-32">
+    <section className="min-h-screen bg-white text-black px-5 sm:px-8 md:px-12 lg:px-20 py-24 sm:py-28 lg:py-32">
       {/* Heading */}
       <div className="mb-16 sm:mb-20 lg:mb-24">
-        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white font-light">
+        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-black font-light">
           Services
         </h1>
 
@@ -47,7 +47,7 @@ const Services = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className="rounded-[2rem] border border-zinc-800 bg-zinc-950 p-7 sm:p-8 min-h-[420px] flex flex-col hover:border-orange-500/40 duration-300"
+            className="rounded-[2rem] border-2 border-zinc-800 bg-white p-7 sm:p-8 min-h-[420px] flex flex-col hover:border-red-400 duration-300"
           >
             {/* Icon */}
             <div className="mb-12">
@@ -64,7 +64,7 @@ const Services = () => {
                 {service.title}
               </h3>
 
-              <p className="mt-5 text-base sm:text-lg leading-relaxed text-zinc-500">
+              <p className="mt-5 text-base sm:text-lg leading-relaxed text-zinc-700">
                 {service.description}
               </p>
             </div>

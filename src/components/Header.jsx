@@ -26,7 +26,7 @@ const Header = () => {
           className="text-[2rem] leading-[1.15]
                  sm:text-5xl sm:leading-[1.08]
                  lg:text-7xl lg:leading-[1.05]
-                 font-semibold max-w-[95%] sm:max-w-full"
+                 font-semibold max-w-[95%] sm:max-w-full text-white"
         >
           We Transform
           <br />
@@ -46,9 +46,16 @@ const Header = () => {
         {/* Buttons */}
 
         <div className="flex flex-col sm:flex-row gap-4 mt-7 sm:mt-8">
-          <Link to="/login">
+          <Link to="/bookConsultation">
             <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium transition duration-300 w-fit cursor-pointer">
               Book Consultation
+            </button>
+          </Link>
+
+
+          <Link to="/artist">
+            <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium transition duration-300 w-fit cursor-pointer">
+              Join as Artist
             </button>
           </Link>
 

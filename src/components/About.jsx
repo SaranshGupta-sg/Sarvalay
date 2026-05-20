@@ -49,7 +49,7 @@ const About = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <section className="min-h-screen bg-black text-white py-14 sm:py-18 lg:py-22">
+    <section className="min-h-screen bg-white text-black py-10 sm:py-14 lg:py-22 pt-1 sm:pt-2 lg:pt-1">
       {/* Heading */}
       <div className="mb-16 sm:mb-20 lg:mb-24 px-5 sm:px-8 md:px-12 lg:px-20">
         <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white font-light">
@@ -62,7 +62,7 @@ const About = () => {
       </div>
 
       {/* Team */}
-      <div className="bg-black text-white border-y border-zinc-700">
+      <div className="bg-white text-black border-y border-zinc-700">
         {teamMembers.map((member, index) => (
           <motion.div
             key={index}
