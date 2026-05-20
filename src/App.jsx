@@ -32,7 +32,7 @@ const App = () => {
       />
 
       {/* Projects Page */}
-      <Route path="/projects" element={<ProjectsPage />} />
+      <Route path="/projects" element={<div className="w-full min-h-screen bg-black text-white"><ProjectsPage /></div>} />
     </Routes>
   );
 };
