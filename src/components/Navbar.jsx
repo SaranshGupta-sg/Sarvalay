@@ -2,6 +2,7 @@ import { useState } from "react";
 import logo from "/images/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { name: "Work", path: "/" },
@@ -34,9 +35,11 @@ const Navbar = () => {
             ))}
           </nav>
 
-          <button className="bg-white text-black px-6 py-3 rounded-full text-lg font-medium hover:bg-gray-200 transition">
-            Let&apos;s Talk →
-          </button>
+          <Link to="/login">
+            <button className="bg-white text-black px-5 py-3 rounded-full text-md font-medium hover:bg-gray-200 transition cursor-pointer">
+              Book Consultation
+            </button>
+          </Link>
         </div>
 
         {/* Hamburger */}
@@ -73,9 +76,11 @@ const Navbar = () => {
           </nav>
 
           {/* Button */}
-          <button className="bg-white text-black px-8 py-4 rounded-full text-xl font-medium hover:bg-gray-200 transition">
-            Let&apos;s Talk →
-          </button>
+          <Link to="/login">
+            <button className="bg-white text-black px-5 py-4 rounded-full text-xl font-medium hover:bg-gray-200 transition">
+              Book Consultation
+            </button>
+          </Link>
         </div>
       )}
     </header>

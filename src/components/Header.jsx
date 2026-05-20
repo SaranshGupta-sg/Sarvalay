@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <section
-      className="relative w-full h-screen bg-cover bg-[center_right_35%] sm:bg-center flex items-center px-6 sm:px-12 lg:px-20 overflow-hidden"
+      className="relative w-full h-screen bg-cover bg-[center_right_35%] sm:bg-center flex items-center pt-12 sm:pt-16 lg:pt-20 px-6 sm:px-12 lg:px-20 overflow-hidden"
       style={{
         backgroundImage: "url('/images/header-bg.png')",
       }}
@@ -42,14 +44,19 @@ const Header = () => {
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 mt-7 sm:mt-8">
-          <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium transition duration-300 w-fit">
-            Book Consultation
-          </button>
 
-          <button className="border border-white/30 hover:bg-white hover:text-black text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium transition duration-300 w-fit">
-            Explore Projects
-          </button>
+        <div className="flex flex-col sm:flex-row gap-4 mt-7 sm:mt-8">
+          <Link to="/login">
+            <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium transition duration-300 w-fit cursor-pointer">
+              Book Consultation
+            </button>
+          </Link>
+
+          <Link to="/projects">
+            <button className="border border-white/30 hover:bg-white hover:text-black text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium transition duration-300 w-fit cursor-pointer">
+              Explore Projects
+            </button>
+          </Link>
         </div>
       </div>
     </section>

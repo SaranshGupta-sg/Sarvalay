@@ -10,6 +10,7 @@ import Ready from "./components/Ready";
 import Footer from "./components/Footer";
 
 import ProjectsPage from "./components/ProjectsPage";
+import Login from "./components/Login"
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
 
       {/* Projects Page */}
       <Route path="/projects" element={<div className="w-full min-h-screen bg-black text-white"><ProjectsPage /></div>} />
+      <Route path="/login" element={<Login />} />
     </Routes>
   );
 };
