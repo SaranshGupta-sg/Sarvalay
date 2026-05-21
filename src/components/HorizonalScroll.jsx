@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,14 +28,6 @@ const projects = [
     description:
       "Premium landing page with elegant typography, fullscreen visuals, and engaging scrolling interactions.",
   },
-
-  {
-    image: "/images/img-4.jpg",
-    title: "Startup Product Showcase",
-    description:
-      "A responsive product showcase website focused on smooth user experience and modern UI design.",
-  },
-
   {
     type: "projectsPage",
   },
@@ -93,7 +86,7 @@ const HorizontalScroll = () => {
                     
                     {/* Top Heading */}
                     <div className="translate-y-[-20px] sm:translate-y-[-30px] lg:translate-y-[-40px]">
-                      <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] leading-none font-light tracking-tight">
+                      <h1 className="headland-one-regular text-6xl sm:text-5xl md:text-6xl lg:text-[8rem] leading-none font-light tracking-tight">
                         Projects
                       </h1>
                     </div>
@@ -102,10 +95,10 @@ const HorizontalScroll = () => {
                     <div className="h-20 sm:h-28 lg:h-22" />
 
                     {/* Bottom Content */}
-                    <div className="translate-y-[20px] sm:translate-y-[30px] lg:translate-y-[40px] flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-11">
+                    <div className="translate-y-[20px] sm:translate-y-[30px] lg:translate-y-[40px] flex flex-col lg:flex-row lg:items-end lg:justify-between gap-15 lg:gap-11">
                       
                       {/* Description */}
-                      <p className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl leading-tight font-light max-w-6xl">
+                      <p className="roboto-condensed text-2xl sm:text-3xl md:text-4xl lg:text-6xl leading-tight font-light max-w-6xl">
                         These are not just projects, they are stories of our
                         clients, our work, and the impact we made.
                       </p>

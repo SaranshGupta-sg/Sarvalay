@@ -120,6 +120,8 @@ const Artist = () => {
         "service_52y6oom",
         "template_alevyqd",
         {
+          to_email: "sarvalayworld@gmail.com",
+          message: "Sarvalay Artist Portfolio Received",
           name: artistData.name,
           email: artistData.email,
           phone: artistData.phone,
@@ -133,6 +135,8 @@ const Artist = () => {
       );
 
       console.log("Email Sent");
+
+      console.log("Confirmation Email Sent");
 
       // =========================
       // SUCCESS

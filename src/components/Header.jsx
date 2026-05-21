@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Header = () => {
   return (
@@ -12,21 +13,35 @@ const Header = () => {
       <div className="absolute inset-0 bg-black/35"></div>
 
       {/* Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/5 to-transparent"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/0.5 to-transparent"></div>
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-4xl mt-10 sm:mt-0">
         {/* Small Heading */}
-        <p className="text-[9px] sm:text-sm tracking-[2px] sm:tracking-[4px] uppercase mb-3 sm:mb-4 text-gray-300">
+        <motion.p
+          initial={{ opacity: 0, y: 120 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="text-[9px] sm:text-sm tracking-[2px] sm:tracking-[4px] uppercase mb-3 sm:mb-4 text-white"
+        >
           ART CONSULTANCY & EXECUTION
-        </p>
+        </motion.p>
 
         {/* Main Heading */}
-        <h1
-          className="text-[2rem] leading-[1.15]
-                 sm:text-5xl sm:leading-[1.08]
-                 lg:text-7xl lg:leading-[1.05]
-                 font-semibold max-w-[95%] sm:max-w-full text-white"
+        <motion.h1
+          initial={{ opacity: 0, y: 120 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{
+            duration: 1,
+            delay: 0.15,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="text-[2rem] leading-[1.15] sm:text-5xl sm:leading-[1.08] lg:text-7xl lg:leading-[1.05] font-semibold max-w-[95%] sm:max-w-full text-white"
         >
           We Transform
           <br />
@@ -34,37 +49,54 @@ const Header = () => {
           <br />
           Through <span className="text-red-500">Curated Art</span>
           <br />& <span className="text-red-500">Flawless Execution</span>
-        </h1>
+        </motion.h1>
 
         {/* Paragraph */}
-        <p className="text-gray-200 text-xs sm:text-base mt-5 sm:mt-6 leading-6 sm:leading-7 max-w-[95%] sm:max-w-xl">
+        <motion.p
+          initial={{ opacity: 0, y: 120 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{
+            duration: 1,
+            delay: 0.35,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="text-white text-xs sm:text-base mt-5 sm:mt-6 leading-6 sm:leading-7 max-w-[95%] sm:max-w-xl"
+        >
           From concept to installation and long-term care, Sarvalay delivers
           end-to-end art solutions with verified artists, precision execution,
           and unmatched reliability.
-        </p>
+        </motion.p>
 
         {/* Buttons */}
-
-        <div className="flex flex-col sm:flex-row gap-4 mt-7 sm:mt-8">
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 1,
+            delay: 0.55,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="flex flex-col sm:flex-row gap-4 mt-7 sm:mt-8"
+        >
           <Link to="/bookConsultation">
-            <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium transition duration-300 w-fit cursor-pointer">
+            <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-300 hover:scale-105 w-fit cursor-pointer">
               Book Consultation
             </button>
           </Link>
 
-
           <Link to="/artist">
-            <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium transition duration-300 w-fit cursor-pointer">
+            <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-300 hover:scale-105 w-fit cursor-pointer">
               Join as Artist
             </button>
           </Link>
 
           <Link to="/projects">
-            <button className="border border-white/30 hover:bg-white hover:text-black text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium transition duration-300 w-fit cursor-pointer">
+            <button className="border border-white/20 hover:bg-white hover:text-black text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-300 hover:scale-105 w-fit cursor-pointer">
               Explore Projects
             </button>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

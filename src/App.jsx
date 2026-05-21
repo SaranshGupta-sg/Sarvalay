@@ -10,11 +10,15 @@ import Ready from "./components/Ready";
 import Footer from "./components/Footer";
 
 import ProjectsPage from "./components/ProjectsPage";
-import BookConsultation from "./components/BookConsultation"
+import BookConsultation from "./components/BookConsultation";
 import Artist from "./components/Artist";
+
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   return (
+    <>
+    <ScrollToTop />
     <Routes>
       {/* Home Page */}
       <Route
@@ -22,11 +26,25 @@ const App = () => {
         element={
           <div className="w-full min-h-screen">
             <Navbar />
+
             <Header />
             <Carousel />
-            <HorizonalScroll />
-            <Services />
-            <About />
+
+            {/* WORK */}
+            <div id="work">
+              <HorizonalScroll />
+            </div>
+
+            {/* SERVICES */}
+            <div id="services">
+              <Services />
+            </div>
+
+            {/* ABOUT */}
+            <div id="about">
+              <About />
+            </div>
+
             <Ready />
             <Footer />
           </div>
@@ -34,10 +52,20 @@ const App = () => {
       />
 
       {/* Projects Page */}
-      <Route path="/projects" element={<div className="w-full min-h-screen bg-black text-white"><ProjectsPage /></div>} />
+      <Route
+        path="/projects"
+        element={
+          <div className="w-full min-h-screen bg-black text-white">
+            <ProjectsPage />
+          </div>
+        }
+      />
+
       <Route path="/bookConsultation" element={<BookConsultation />} />
+
       <Route path="/artist" element={<Artist />} />
     </Routes>
+    </>
   );
 };
 
