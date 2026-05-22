@@ -19,3 +19,4 @@ git add .
 git commit -m "new"
 git push origin main
 kinyoubi no yoru,tomodachi to yakusoku ga arimasu
+ue shita 
