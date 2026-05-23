@@ -7,8 +7,8 @@ import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
 
 const navLinks = [
-  { name: "Work", to: "work" },
   { name: "About", to: "about" },
+  { name: "Work", to: "work" },
   { name: "Services", to: "services" },
 ];
 
