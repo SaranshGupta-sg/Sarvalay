@@ -6,9 +6,9 @@ const Footer = () => {
         {/* Left */}
         <div className="max-w-4xl">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-none font-light tracking-tight">
-            Built right.
-            <br />
             Built once.
+            <br />
+            Built right.
           </h1>
 
           {/* Button */}
@@ -55,22 +55,17 @@ const Footer = () => {
             {[
               {
                 name: "INSTAGRAM ↗",
-                link: "https://instagram.com",
+                link: "https://instagram.com/sarvalay/",
               },
 
               {
                 name: "LINKEDIN ↗",
-                link: "https://linkedin.com",
-              },
-
-              {
-                name: "X (TWITTER) ↗",
-                link: "https://x.com",
+                link: "https://linkedin.com/company/sarvalay/",
               },
 
               {
                 name: "EMAIL ↗",
-                link: "mailto:hello@dzinr.in",
+                link: "mailto:sarvalayworld@gmail.com",
               },
             ].map((item, index) => (
               <a

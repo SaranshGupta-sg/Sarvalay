@@ -77,25 +77,45 @@ const Header = () => {
             delay: 0.55,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="flex flex-col sm:flex-row gap-4 mt-7 sm:mt-8"
+          className="flex flex-col gap-5 mt-8"
         >
-          <Link to="/bookConsultation">
-            <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-300 hover:scale-105 w-fit cursor-pointer">
-              Book Consultation
-            </button>
-          </Link>
+          {/* Top Buttons */}
+          <div className="flex flex-col sm:flex-row gap-5">
+            {/* Book Consultation */}
+            <Link to="/bookConsultation">
+              <button className="flex items-center gap-3 bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 hover:scale-105 shadow-[0_10px_30px_rgba(255,0,0,0.25)] cursor-pointer">
+                
+                Book Consultation
+              </button>
+            </Link>
 
-          <Link to="/artist">
-            <button className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-300 hover:scale-105 w-fit cursor-pointer">
-              Join as Artist
-            </button>
-          </Link>
+            {/* Join Artist */}
+            <Link to="/artist">
+              <button className="flex items-center gap-3 bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 hover:scale-105 shadow-[0_10px_30px_rgba(255,0,0,0.25)] cursor-pointer">
+               
+                Join as Artist
+              </button>
+            </Link>
+          </div>
 
-          <Link to="/projects">
-            <button className="border border-white/20 hover:bg-white hover:text-black text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium transition-all duration-300 hover:scale-105 w-fit cursor-pointer">
-              Explore Projects
-            </button>
-          </Link>
+          {/* Explore Projects */}
+          <div>
+            <Link to="/projects">
+              <button className="group flex items-center justify-between gap-12 bg-white/10 backdrop-blur-md border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-2xl text-sm sm:text-base font-medium transition-all duration-300 hover:bg-white hover:text-black shadow-lg cursor-pointer min-w-7.5px">
+                <div className="flex items-center gap-4">
+                
+                  
+
+                  <span>Explore Projects</span>
+                </div>
+
+                {/* Arrow */}
+                <span className="text-2xl transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </button>
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

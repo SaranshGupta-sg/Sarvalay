@@ -3,43 +3,50 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const teamMembers = [
   {
-    role: "Creative Director",
-    name: "CARL GODBOUT",
+    role: "Founder",
+    name: "Gagan Singh Hada",
     image: "/images/team-1.jpg",
     color: "bg-orange-500",
   },
 
   {
-    role: "Content Strategist",
-    name: "CAMILLE BRIÈRE",
+    role: "Co Founder",
+    name: "Sakshi Gupta",
     image: "/images/team-2.jpg",
     color: "bg-lime-500",
   },
 
   {
-    role: "Senior Consultant",
-    name: "STÉPHANIE BRUNELLE",
+    role: "Head od Digital Design",
+    name: "Abhishek Dhakar",
     image: "/images/team-3.jpg",
     color: "bg-cyan-500",
   },
 
   {
-    role: "CEO & General Director",
-    name: "PIERRE-LUC PAIEMENT",
+    role: "Head od Traditional Art",
+    name: "Rakshanda Prajapati",
     image: "/images/team-4.jpg",
     color: "bg-pink-500",
   },
 
   {
-    role: "Strategy Director",
-    name: "MICHÈLE RIENDEAU",
+    role: "Senior Artist",
+    name: "Sunil kasana",
     image: "/images/team-5.jpg",
     color: "bg-yellow-500",
   },
 
   {
-    role: "Lead Consultant",
-    name: "MEGGIE LAVOIE",
+    role: "Senior Artist",
+    name: "Divya",
+    image: "/images/team-6.jpg",
+    color: "bg-violet-500",
+  },
+
+  {
+    role: "Artist & Project Support",
+    name: "Kanishka Singh",
     image: "/images/team-6.jpg",
     color: "bg-violet-500",
   },
