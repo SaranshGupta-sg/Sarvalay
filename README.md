@@ -18,3 +18,8 @@ If you are developing a production application, we recommend using TypeScript wi
 git add .
 git commit -m "new"
 git push origin main
+
+
+cd "1" 
+javac DataTypes.java
+java DataTypes.java
