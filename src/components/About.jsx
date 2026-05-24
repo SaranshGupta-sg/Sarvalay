@@ -12,7 +12,7 @@ const teamMembers = [
   {
     role: "Co Founder",
     name: "Sakshi Gupta",
-    image: "/images/team-2.jpg",
+    image: "/images/team-2.png",
     color: "bg-lime-500",
   },
 

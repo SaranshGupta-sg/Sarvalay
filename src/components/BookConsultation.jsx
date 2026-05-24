@@ -325,9 +325,9 @@ const BookConsultation = () => {
             <h3 className="text-xl sm:text-2xl mb-4">Preferred Timeline</h3>
 
             <input
-              type="text"
+              type="date"
               name="preferredTimeline"
-              placeholder="Expected completion timeline"
+              min={new Date().toISOString().split("T")[0]}
               className="w-full border border-zinc-300 rounded-2xl px-5 py-4 bg-white outline-none text-lg focus:border-black duration-300"
             />
           </div>
@@ -336,12 +336,23 @@ const BookConsultation = () => {
           <div className="mb-10">
             <h3 className="text-xl sm:text-2xl mb-4">Budget</h3>
 
-            <input
-              type="text"
+            <select
               name="budget"
-              placeholder="Enter your estimated budget"
-              className="w-full border border-zinc-300 rounded-2xl px-5 py-4 bg-white outline-none text-lg focus:border-black duration-300"
-            />
+              defaultValue=""
+              className="w-full border border-zinc-300 rounded-2xl px-5 py-4 bg-white outline-none text-lg focus:border-black duration-300 text-zinc-700"
+            >
+              <option value="" disabled>
+                Select your estimated budget
+              </option>
+
+              <option value="less-than-50000">Less than ₹50,000</option>
+
+              <option value="50000-100000">₹50,000 – ₹1 Lakh</option>
+
+              <option value="100000-500000">₹1 Lakh – ₹5 Lakhs</option>
+
+              <option value="more-than-500000">More than ₹5 Lakhs</option>
+            </select>
           </div>
 
           {/* Additional Requirements */}

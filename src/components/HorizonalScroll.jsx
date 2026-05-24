@@ -3,7 +3,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 

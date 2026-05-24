@@ -10,15 +10,17 @@ import { useState } from "react";
 import Navbar from "./Navbar";
 
 const artistTypes = [
-  "Photographer",
-  "Graphic Designer",
-  "Video Editor",
-  "3D Artist",
-  "Illustrator",
-  "Animator",
-  "UI/UX Designer",
-  "Creative Developer",
-  "Other",
+  "Madhubani Art",
+  "Warli Art",
+  "Pattachitra",
+  "Kalamkari",
+  "Gond Art",
+  "Phad Art",
+  "Tanjore Art",
+  "Abstract Art",
+  "Graffiti & Street Art",
+  "Mandala Art",
+  "Other"
 ];
 
 const Artist = () => {
@@ -222,7 +224,7 @@ const Artist = () => {
 
           {/* Artist Type */}
           <div className="mb-10">
-            <h3 className="text-xl sm:text-2xl mb-5">Artist Type*</h3>
+            <h3 className="text-xl sm:text-2xl mb-5">Art Type*</h3>
 
             <div className="flex flex-wrap gap-4">
               {artistTypes.map((type, index) => (

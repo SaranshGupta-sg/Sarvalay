@@ -1,4 +1,33 @@
+import { useLocation, useNavigate } from "react-router-dom";
+
 const Footer = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleFooterNav = (section) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+
+      setTimeout(() => {
+        const element = document.getElementById(section);
+
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(section);
+
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    }
+  };
+
   return (
     <footer className="min-h-screen bg-black text-white border-t border-zinc-800 px-5 sm:px-8 md:px-12 lg:px-20 py-12 sm:py-16 lg:py-20 flex flex-col justify-between">
       {/* Top Section */}
@@ -12,12 +41,12 @@ const Footer = () => {
           </h1>
 
           {/* Button */}
-          <a
-            href="#contact"
+          <button
+            onClick={() => navigate("/bookConsultation")}
             className="mt-10 sm:mt-12 w-full sm:w-[80%] bg-[#ececec] text-black py-3 sm:py-4 text-md sm:text-lg flex items-center justify-center gap-3 hover:bg-white duration-300 rounded-full"
           >
             Book Consultation
-          </a>
+          </button>
         </div>
 
         {/* Right */}
@@ -40,13 +69,13 @@ const Footer = () => {
                 link: "#services",
               },
             ].map((item, index) => (
-              <a
+              <button
                 key={index}
-                href={item.link}
-                className="block text-xl sm:text-2xl font-light cursor-pointer hover:text-zinc-400 duration-300"
+                onClick={() => handleFooterNav(item.link.replace("#", ""))}
+                className="block text-left text-xl sm:text-2xl font-light cursor-pointer hover:text-zinc-400 duration-300"
               >
                 {item.name}
-              </a>
+              </button>
             ))}
           </div>
 
@@ -73,7 +102,7 @@ const Footer = () => {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-xl sm:text-2xl font-light cursor-pointer hover:text-zinc-400 duration-300"
+                className="block text-xl sm:text-2xl font-light tracking-tight hover:text-zinc-400 transition-all duration-300 hover:translate-x-1"
               >
                 {item.name}
               </a>

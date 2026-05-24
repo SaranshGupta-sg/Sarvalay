@@ -3,8 +3,7 @@ import logo from "/images/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 
-import { Link as ScrollLink } from "react-scroll";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const navLinks = [
   { name: "About", to: "about" },
@@ -14,6 +13,32 @@ const navLinks = [
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavClick = (section) => {
+    if (location.pathname !== "/") {
+      navigate("/");
+
+      setTimeout(() => {
+        const element = document.getElementById(section);
+
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(section);
+
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    }
+  };
 
   return (
     <header className="w-full bg-white/75 backdrop-blur-md text-black px-6 sm:px-12 py-2.5 fixed top-0 left-0 z-50 border-b border-zinc-200">
@@ -27,16 +52,13 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-16">
           <nav className="flex items-center gap-10">
             {navLinks.map((link, index) => (
-              <ScrollLink
+              <button
                 key={index}
-                to={link.to}
-                smooth={true}
-                duration={800}
-                offset={-100}
+                onClick={() => handleNavClick(link.to)}
                 className="relative text-lg cursor-pointer transition hover:text-zinc-700 before:content-[''] before:absolute before:left-0 before:-bottom-2 before:w-0 before:h-[2px] before:bg-[#ee0653] before:transition-all before:duration-500 hover:before:w-full"
               >
                 {link.name}
-              </ScrollLink>
+              </button>
             ))}
           </nav>
 
@@ -63,26 +85,20 @@ const Navbar = () => {
           {/* Nav Links */}
           <nav className="flex flex-col items-center gap-8">
             {navLinks.map((link, index) => (
-              <ScrollLink
+               <button
                 key={index}
-                to={link.to}
-                smooth={true}
-                duration={800}
-                offset={-100}
-                onClick={() => setShowMenu(false)}
-                className="relative text-3xl font-medium cursor-pointer transition hover:text-zinc-500 before:content-[''] before:absolute before:left-0 before:-bottom-2 before:w-0 before:h-[2px] before:bg-[#ee0653] before:transition-all before:duration-500 hover:before:w-full"
+                onClick={() => handleNavClick(link.to)}
+                className="relative text-lg cursor-pointer transition hover:text-zinc-700 before:content-[''] before:absolute before:left-0 before:-bottom-2 before:w-0 before:h-[2px] before:bg-[#ee0653] before:transition-all before:duration-500 hover:before:w-full"
               >
                 {link.name}
-              </ScrollLink>
+              </button>
             ))}
           </nav>
 
           {/* Mobile Button */}
           <Link to="/bookConsultation">
             <button className="group relative overflow-hidden bg-black text-white px-5 py-3 rounded-full text-md font-medium border border-black transition-all duration-500 hover:bg-white hover:text-black hover:scale-105 cursor-pointer">
-              <span className="flex items-center gap-2">
-                Book Consultation
-              </span>
+              <span className="flex items-center gap-2">Book Consultation</span>
             </button>
           </Link>
         </div>

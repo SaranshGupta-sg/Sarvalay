@@ -28,7 +28,7 @@ const Header = () => {
           }}
           className="text-[9px] sm:text-sm tracking-[2px] sm:tracking-[4px] uppercase mb-3 sm:mb-4 text-white"
         >
-          ART CONSULTANCY & EXECUTION
+          ART EXECUTION PLATFORM
         </motion.p>
 
         {/* Main Heading */}
@@ -83,18 +83,16 @@ const Header = () => {
           <div className="flex flex-col sm:flex-row gap-5">
             {/* Book Consultation */}
             <Link to="/bookConsultation">
-              <button className="flex items-center gap-3 bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 hover:scale-105 shadow-[0_10px_30px_rgba(255,0,0,0.25)] cursor-pointer">
-                
-                Book Consultation
-              </button>
+              <button className="bg-red-700 hover:bg-red-800 text-white px-7 py-4 rounded-xl duration-300">
+              Book Consultation
+            </button>
             </Link>
 
             {/* Join Artist */}
             <Link to="/artist">
-              <button className="flex items-center gap-3 bg-red-500 hover:bg-red-600 text-white px-8 py-4 rounded-full text-sm sm:text-base font-semibold transition-all duration-300 hover:scale-105 shadow-[0_10px_30px_rgba(255,0,0,0.25)] cursor-pointer">
-               
-                Join as Artist
-              </button>
+              <button className="bg-red-700 hover:bg-red-800 text-white px-7 py-4 rounded-xl duration-300">
+              Join As Artist
+            </button>
             </Link>
           </div>
 
