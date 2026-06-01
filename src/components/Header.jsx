@@ -101,9 +101,6 @@ const Header = () => {
             <Link to="/projects">
               <button className="group flex items-center justify-between gap-12 bg-white/10 backdrop-blur-md border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-2xl text-sm sm:text-base font-medium transition-all duration-300 hover:bg-white hover:text-black shadow-lg cursor-pointer min-w-7.5px">
                 <div className="flex items-center gap-4">
-                
-                  
-
                   <span>Explore Projects</span>
                 </div>
 

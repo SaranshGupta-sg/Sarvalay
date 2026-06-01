@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,19 +63,12 @@ const HorizontalScroll = () => {
   );
 
   return (
-    <section
-      ref={containerRef}
-      className="overflow-hidden bg-white text-black"
-    >
+    <section ref={containerRef} className="overflow-hidden bg-white text-black">
       {/* Horizontal Scroll Section */}
       <section className="bg-white overflow-hidden" ref={triggerRef}>
         <div className="h-screen flex items-center">
-          <div
-            ref={imgsRef}
-            className="flex gap-5 sm:gap-8 px-3 sm:px-5 w-max"
-          >
+          <div ref={imgsRef} className="flex gap-5 sm:gap-8 px-3 sm:px-5 w-max">
             {projects.map((project, index) => {
-              
               // Projects Text Page
               if (project.type === "projectsPage") {
                 return (
@@ -82,12 +76,20 @@ const HorizontalScroll = () => {
                     key={index}
                     className="w-screen h-screen shrink-0 bg-white text-black px-5 sm:px-8 md:px-12 lg:px-20 py-20 sm:py-24 lg:py-30 flex flex-col justify-center"
                   >
-                    
                     {/* Top Heading */}
                     <div className="translate-y-[-20px] sm:translate-y-[-30px] lg:translate-y-[-40px]">
-                      <h1 className="headland-one-regular text-6xl sm:text-5xl md:text-6xl lg:text-[8rem] leading-none font-light tracking-tight">
+                      <motion.h1
+                        initial={{ opacity: 0, y: 120 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                        transition={{
+                          duration: 0.8,
+                          ease: [0.22, 1, 0.36, 1],
+                        }}
+                        className="headland-one-regular text-6xl sm:text-5xl md:text-6xl lg:text-[8rem] leading-none font-light tracking-tight"
+                      >
                         Projects
-                      </h1>
+                      </motion.h1>
                     </div>
 
                     {/* Space Between */}
@@ -95,16 +97,26 @@ const HorizontalScroll = () => {
 
                     {/* Bottom Content */}
                     <div className="translate-y-[20px] sm:translate-y-[30px] lg:translate-y-[40px] flex flex-col lg:flex-row lg:items-end lg:justify-between gap-15 lg:gap-11">
-                      
                       {/* Description */}
-                      <p className="roboto-condensed text-2xl sm:text-3xl md:text-4xl lg:text-6xl leading-tight font-light max-w-6xl">
+                      <motion.p
+                        initial={{ opacity: 0, y: 120 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false, amount: 0.3 }}
+                        transition={{
+                          duration: 0.8,
+                          ease: [0.22, 1, 0.36, 1],
+                        }}
+                        className="roboto-condensed text-2xl sm:text-3xl md:text-4xl lg:text-6xl leading-tight font-light max-w-6xl"
+                      >
                         These are not just projects, they are stories of our
                         clients, our work, and the impact we made.
-                      </p>
+                      </motion.p>
 
                       {/* Button */}
                       <Link to="/projects">
-                        <button className="text-orange-500 text-2xl sm:text-3xl md:text-4xl lg:text-5xl underline underline-offset-8 whitespace-nowrap hover:opacity-80 duration-300 self-start lg:self-end cursor-pointer">
+                        <button
+                          className="headland-one-regular text-orange-500 text-2xl sm:text-3xl md:text-4xl lg:text-5xl underline underline-offset-8 whitespace-nowrap hover:opacity-80 duration-300 self-start lg:self-end cursor-pointer"
+                        >
                           See More ↗
                         </button>
                       </Link>
@@ -120,7 +132,6 @@ const HorizontalScroll = () => {
                   className="pt-20 sm:pt-16 md:pt-10 lg:pt-18 flex items-center"
                 >
                   <div className="w-[98vw] sm:w-[95vw] md:w-[92vw] lg:w-[85vw] xl:w-[78vw] h-[72vh] sm:h-[76vh] md:h-[80vh] lg:h-[84vh] shrink-0 rounded-3xl overflow-hidden bg-[#f5f5f5] border border-black flex flex-col">
-                    
                     {/* Image */}
                     <div className="flex-1 overflow-hidden">
                       <img

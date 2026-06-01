@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const services = [
   {
     title: "Wall Art & Murals",
@@ -57,27 +59,42 @@ const Services = () => {
     <section className="bg-[#f8f5f1] text-black px-5 sm:px-8 md:px-12 lg:px-20 py-24 sm:py-28 overflow-hidden">
       {/* Top Label */}
       <div className="flex justify-center mb-6">
-        <div className="border border-red-200 rounded-full px-5 py-2 text-xs sm:text-sm tracking-[0.25em] uppercase text-red-700 bg-white">
+        <motion.div
+          initial={{ opacity: 0, y: 120 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          className="headland-one-regular border border-red-200 rounded-full px-5 py-2 text-xs sm:text-sm tracking-[0.25em] uppercase text-red-700 bg-white"
+        >
           Services We Provide
-        </div>
+        </motion.div>
       </div>
 
       {/* Heading */}
-      <div className="max-w-5xl mx-auto text-center mb-16 sm:mb-20">
+      <motion.div
+        initial={{ opacity: 0, y: 120 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{
+          duration: 0.8,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        className="roboto-condensed max-w-5xl mx-auto text-center mb-16 sm:mb-20"
+      >
         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light leading-tight tracking-tight">
           End-to-End Artistic Solutions
           <br />
-          for{" "}
-          <span className="text-red-700 font-normal">
-            Inspiring Spaces
-          </span>
+          for <span className="text-red-700 font-normal">Inspiring Spaces</span>
         </h2>
 
         <p className="mt-6 text-zinc-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
-          From concept to care, we deliver complete art solutions with
-          verified artists, precision execution, and unmatched reliability.
+          From concept to care, we deliver complete art solutions with verified
+          artists, precision execution, and unmatched reliability.
         </p>
-      </div>
+      </motion.div>
 
       {/* Service Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
@@ -111,8 +128,6 @@ const Services = () => {
               <p className="text-zinc-600 leading-relaxed text-sm sm:text-base">
                 {service.description}
               </p>
-
-              
             </div>
           </div>
         ))}
@@ -120,29 +135,27 @@ const Services = () => {
 
       {/* Highlights */}
       <div className="mt-14 bg-gradient-to-r from-[#f8f5f1] to-[#f3eee8] rounded-[28px] border border-[#e7dfd6] px-6 sm:px-10 py-8">
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
-    {highlights.map((item, index) => (
-      <div
-        key={index}
-        className={`px-5 py-4 ${
-          index !== highlights.length - 1
-            ? "lg:border-r lg:border-[#ddd3c8]"
-            : ""
-        }`}
-      >
-        <h4 className="text-base font-semibold text-black">
-          {item.title}
-        </h4>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5">
+          {highlights.map((item, index) => (
+            <div
+              key={index}
+              className={`px-5 py-4 ${
+                index !== highlights.length - 1
+                  ? "lg:border-r lg:border-[#ddd3c8]"
+                  : ""
+              }`}
+            >
+              <h4 className="text-base font-semibold text-black">
+                {item.title}
+              </h4>
 
-        <p className="mt-3 text-sm text-zinc-600 leading-relaxed">
-          {item.desc}
-        </p>
+              <p className="mt-3 text-sm text-zinc-600 leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-</div>
-
-      
     </section>
   );
 };

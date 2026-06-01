@@ -59,13 +59,17 @@ const About = () => {
     <section className="min-h-screen bg-white text-black py-10 sm:py-14 lg:py-22 pt-1 sm:pt-2 lg:pt-1">
       {/* Heading */}
       <div className="mb-16 sm:mb-20 lg:mb-24 px-5 sm:px-8 md:px-12 lg:px-20">
-        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-white font-light">
-          Explore
-        </h1>
+       
 
-        <h1 className="mt-3 text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light leading-none tracking-tight">
+        <motion.h1 initial={{ opacity: 0, y: 120 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1],
+          }} className="headland-one-regular mt-3 text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light leading-none tracking-tight">
           Our Team
-        </h1>
+        </motion.h1>
       </div>
 
       {/* Team */}

@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
 const Carousel = () => {
-  const topRow = ["Item 1", "Item 2", "Item 3", "Item 4"];
-  const bottomRow = ["Item 1", "Item 2", "Item 3", "Item 4"];
+  const topRow = ["LazyChunks", "Reboot", "Alora", "Espresso", "Sevva"];
+  const bottomRow = ["LazyChunks", "Reboot", "Alora", "Espresso", "Sevva"];
 
   return (
     <section className="w-full bg-white overflow-hidden pt-28 sm:pt-32 lg:pt-36 pb-20">

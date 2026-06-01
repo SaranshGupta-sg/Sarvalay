@@ -51,7 +51,7 @@ const ProjectsPage = () => {
       <Navbar />
 
       <div className="pt-20 sm:pt-24 lg:pt-28 px-5 sm:px-8 md:px-12 lg:px-20 pb-20">
-        <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] leading-none font-light tracking-tight">
+        <h1 className="headland-one-regular text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] leading-none font-light tracking-tight">
           Projects
         </h1>
 
