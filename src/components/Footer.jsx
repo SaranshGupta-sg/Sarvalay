@@ -42,7 +42,7 @@ const Footer = () => {
             duration: 0.8,
             ease: [0.22, 1, 0.36, 1],
           }} className="max-w-4xl">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-none font-light tracking-tight">
+          <h1 className="roboto-condensed text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-none font-light tracking-tight">
             Built once.
             <br />
             Built right.
@@ -51,7 +51,7 @@ const Footer = () => {
           {/* Button */}
           <button
             onClick={() => navigate("/bookConsultation")}
-            className="mt-10 sm:mt-12 w-full sm:w-[80%] bg-[#ececec] text-black py-3 sm:py-4 text-md sm:text-lg flex items-center justify-center gap-3 hover:bg-white duration-300 rounded-full"
+            className="roboto-condensed mt-10 sm:mt-12 w-full sm:w-[80%] bg-[#ececec] text-black py-3 sm:py-4 text-md sm:text-lg flex items-center justify-center gap-3 hover:bg-white duration-300 rounded-full"
           >
             Book Consultation
           </button>
@@ -86,7 +86,7 @@ const Footer = () => {
               <button
                 key={index}
                 onClick={() => handleFooterNav(item.link.replace("#", ""))}
-                className="block text-left text-xl sm:text-2xl font-light cursor-pointer hover:text-zinc-400 duration-300"
+                className="roboto-condensed block text-left text-xl sm:text-2xl font-light cursor-pointer hover:text-zinc-400 duration-300"
               >
                 {item.name}
               </button>
@@ -116,7 +116,7 @@ const Footer = () => {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-xl sm:text-2xl font-light tracking-tight hover:text-zinc-400 transition-all duration-300 hover:translate-x-1"
+                className="roboto-condensed block text-xl sm:text-2xl font-light tracking-tight hover:text-zinc-400 transition-all duration-300 hover:translate-x-1"
               >
                 {item.name}
               </a>

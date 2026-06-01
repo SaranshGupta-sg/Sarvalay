@@ -1,5 +1,7 @@
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { motion } from "framer-motion";
+
 
 const projects = [
   {
@@ -51,9 +53,15 @@ const ProjectsPage = () => {
       <Navbar />
 
       <div className="pt-20 sm:pt-24 lg:pt-28 px-5 sm:px-8 md:px-12 lg:px-20 pb-20">
-        <h1 className="headland-one-regular text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] leading-none font-light tracking-tight">
+        <motion.h1 initial={{ opacity: 0, y: 120 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1],
+          }} className="headland-one-regular text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] leading-none font-light tracking-tight">
           Projects
-        </h1>
+        </motion.h1>
 
         <div className="mt-16 sm:mt-20 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {projects.map((project, index) => (
