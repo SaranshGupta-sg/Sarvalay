@@ -1,78 +1,90 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
-const teamMembers = [
-  {
-    role: "Founder",
-    name: "Gagan Singh Hada",
-    image: "/images/team-1.jpg",
-    color: "bg-orange-500",
-  },
-
-  {
-    role: "Co Founder",
-    name: "Sakshi Gupta",
-    image: "/images/team-2.png",
-    color: "bg-lime-500",
-  },
-
-  {
-    role: "Head od Digital Design",
-    name: "Abhishek Dhakar",
-    image: "/images/team-3.jpg",
-    color: "bg-cyan-500",
-  },
-
-  {
-    role: "Head od Traditional Art",
-    name: "Rakshanda Prajapati",
-    image: "/images/team-4.jpg",
-    color: "bg-pink-500",
-  },
-
-  {
-    role: "Senior Artist",
-    name: "Sunil kasana",
-    image: "/images/team-5.jpg",
-    color: "bg-yellow-500",
-  },
-
-  {
-    role: "Senior Artist",
-    name: "Divya",
-    image: "/images/team-6.jpg",
-    color: "bg-violet-500",
-  },
-
-  {
-    role: "Artist & Project Support",
-    name: "Kanishka Singh",
-    image: "/images/team-6.jpg",
-    color: "bg-violet-500",
-  },
-];
+import { motion } from "framer-motion";
 
 const About = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
-
   return (
-    <section className="min-h-screen bg-white text-black py-10 sm:py-14 lg:py-22 pt-3 sm:pt-5 lg:pt-7">
-      {/* Heading */}
-      <div className="mb-16 sm:mb-20 lg:mb-24 px-5 sm:px-8 md:px-12 lg:px-20">
-       
-
-        <motion.h1 initial={{ opacity: 0, y: 120 }}
+    <section className="bg-white text-black py-12 sm:py-16 lg:py-20">
+      <div className="max-w-8xl mx-auto px-5 sm:px-8 md:px-12 lg:px-20">
+        
+        {/* Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 120 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{
             duration: 0.8,
             ease: [0.22, 1, 0.36, 1],
-          }} className="font-helvetica-black mt-3 text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-light leading-none tracking-tight">
-          Our Team
+          }}
+          className="font-helvetica-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl leading-none tracking-tight mb-12 sm:mb-16"
+        >
+          About Us
         </motion.h1>
-      </div>
 
-      
+        {/* Content */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          
+          {/* Left Side */}
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+              Transforming Commercial Spaces Through Curated Art
+            </h2>
+
+            <p className="text-gray-600 mt-6 text-base sm:text-lg leading-8">
+              Sarvalay is a full-service art execution
+              platform dedicated to transforming commercial environments
+              into inspiring and memorable experiences. We collaborate
+              with talented artists and businesses to bring meaningful
+              artistic concepts to life.
+            </p>
+
+            <p className="text-gray-600 mt-5 text-base sm:text-lg leading-8">
+              From artwork selection and commissioning to installation
+              and maintenance, we manage every stage with precision,
+              ensuring seamless execution and long-term value for our
+              clients.
+            </p>
+          </motion.div>
+
+          {/* Right Side Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="grid grid-cols-2 gap-5"
+          >
+            <div className="bg-black text-white p-6 sm:p-8 rounded-3xl">
+              <h3 className="text-4xl sm:text-5xl font-bold">50</h3>
+              <p className="mt-2 text-gray-300">Projects Completed</p>
+            </div>
+
+            <div className="bg-red-500 text-white p-6 sm:p-8 rounded-3xl">
+              <h3 className="text-4xl sm:text-5xl font-bold">5</h3>
+              <p className="mt-2">Verified Artists</p>
+            </div>
+
+            <div className="bg-gray-100 border border-gray-200 p-6 sm:p-8 rounded-3xl">
+              <h3 className="text-4xl sm:text-5xl font-bold">98%</h3>
+              <p className="mt-2 text-gray-600">
+                Client Satisfaction
+              </p>
+            </div>
+
+            <div className="bg-gray-100 border border-gray-200 p-6 sm:p-8 rounded-3xl">
+              <h3 className="text-4xl sm:text-5xl font-bold">24/7</h3>
+              <p className="mt-2 text-gray-600">
+                Project Support
+              </p>
+            </div>
+          </motion.div>
+
+        </div>
+      </div>
     </section>
   );
 };

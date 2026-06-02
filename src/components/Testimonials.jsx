@@ -47,8 +47,8 @@ const Testimonials = () => {
         </h2>
 
         <p className="roboto-condensed text-gray-500 mt-4 max-w-2xl mx-auto">
-          Discover how our art consultancy and execution services
-          transformed commercial spaces across India.
+          Discover how our art execution services
+          transformed commercial spaces.
         </p>
       </motion.div>
 
