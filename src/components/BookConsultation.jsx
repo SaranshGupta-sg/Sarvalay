@@ -193,7 +193,7 @@ const BookConsultation = () => {
         <form className="mt-16 sm:mt-20 max-w-5xl" onSubmit={handleSubmit}>
           {/* Your Name */}
           <div className="mb-10">
-            <h3 className="text-xl sm:text-2xl mb-4">Your Name*</h3>
+            <h3 className="text-xl sm:text-2xl mb-4">Your Name<span className="text-red-500">*</span></h3>
 
             <input
               type="text"
@@ -206,7 +206,7 @@ const BookConsultation = () => {
 
           {/* Email */}
           <div className="mb-10">
-            <h3 className="text-xl sm:text-2xl mb-4">Email*</h3>
+            <h3 className="text-xl sm:text-2xl mb-4">Email<span className="text-red-500">*</span></h3>
 
             <input
               type="email"
@@ -219,7 +219,7 @@ const BookConsultation = () => {
 
           {/* Phone */}
           <div className="mb-10">
-            <h3 className="text-xl sm:text-2xl mb-4">Phone*</h3>
+            <h3 className="text-xl sm:text-2xl mb-4">Phone<span className="text-red-500">*</span></h3>
 
             <input
               type="text"
@@ -233,7 +233,7 @@ const BookConsultation = () => {
           {/* Company Name */}
           <div className="mb-10">
             <h3 className="text-xl sm:text-2xl mb-4">
-              Organization/Company Name*
+              Organization/Company Name<span className="text-red-500">*</span>
             </h3>
 
             <input
@@ -247,7 +247,7 @@ const BookConsultation = () => {
 
           {/* Upload Space */}
           <div className="mb-10">
-            <h3 className="text-xl sm:text-2xl mb-4">Share Your Space*</h3>
+            <h3 className="text-xl sm:text-2xl mb-4">Share Your Space<span className="text-red-500">*</span></h3>
 
             <label className="w-full min-h-[240px] border-2 border-dashed border-zinc-300 rounded-3xl flex flex-col items-center justify-center text-center px-5 cursor-pointer hover:border-black duration-300">
               <input

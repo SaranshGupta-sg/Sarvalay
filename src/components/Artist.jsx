@@ -249,7 +249,7 @@ const Artist = () => {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
             <div>
-              <h3 className="text-xl sm:text-2xl mb-4">Your Name*</h3>
+              <h3 className="text-xl sm:text-2xl mb-4">Your Name<span className="text-red-500">*</span></h3>
 
               <input
                 type="text"
@@ -261,7 +261,7 @@ const Artist = () => {
             </div>
 
             <div>
-              <h3 className="text-xl sm:text-2xl mb-4">Email*</h3>
+              <h3 className="text-xl sm:text-2xl mb-4">Email<span className="text-red-500">*</span></h3>
 
               <input
                 type="email"
@@ -275,7 +275,7 @@ const Artist = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
             <div>
-              <h3 className="text-xl sm:text-2xl mb-4">Phone*</h3>
+              <h3 className="text-xl sm:text-2xl mb-4">Phone<span className="text-red-500">*</span></h3>
 
               <input
                 type="text"
@@ -287,7 +287,7 @@ const Artist = () => {
             </div>
 
             <div>
-              <h3 className="text-xl sm:text-2xl mb-4">City*</h3>
+              <h3 className="text-xl sm:text-2xl mb-4">City<span className="text-red-500">*</span></h3>
 
               <input
                 type="text"
@@ -303,7 +303,7 @@ const Artist = () => {
           <div className="mb-14 grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-10 items-start">
             {/* LEFT SIDE → Profile Photo */}
             <div>
-              <h3 className="text-xl sm:text-2xl mb-4">Profile Photo*</h3>
+              <h3 className="text-xl sm:text-2xl mb-4">Profile Photo<span className="text-red-500">*</span></h3>
 
               <label className="w-full min-h-[320px] border-2 border-dashed border-zinc-300 rounded-[2rem] flex flex-col items-center justify-center text-center px-5 cursor-pointer hover:border-black duration-300 overflow-hidden">
                 <input
@@ -343,7 +343,7 @@ const Artist = () => {
             <div>
               {/* Art Type */}
               <div>
-                <h3 className="text-xl sm:text-2xl mb-4">Art Type*</h3>
+                <h3 className="text-xl sm:text-2xl mb-4">Art Type<span className="text-red-500">*</span></h3>
 
                 <div className="flex flex-wrap gap-3">
                   {artistTypes.map((type, index) => (
@@ -351,7 +351,7 @@ const Artist = () => {
                       key={index}
                       type="button"
                       onClick={() => toggleType(type)}
-                      className={`px-5 py-3 rounded-full border text-sm duration-300 ${
+                      className={`px-5 py-3 rounded-full border text-sm duration-300 cursor-pointer ${
                         selectedTypes.includes(type)
                           ? "bg-black text-white border-black"
                           : "bg-white text-black border-zinc-300 hover:border-black"
@@ -385,7 +385,7 @@ const Artist = () => {
               {/* Experience */}
               <div className="mt-10">
                 <h3 className="text-xl sm:text-2xl mb-4">
-                  Professional Experience*
+                  Professional Experience<span className="text-red-500">*</span>
                 </h3>
 
                 <div className="flex flex-wrap gap-4">
@@ -394,7 +394,7 @@ const Artist = () => {
                       key={index}
                       type="button"
                       onClick={() => setExperience(item)}
-                      className={`px-6 py-3 rounded-full border duration-300 ${
+                      className={`px-6 py-3 rounded-full border duration-300 cursor-pointer ${
                         experience === item
                           ? "bg-black text-white border-black"
                           : "border-zinc-300 hover:border-black"
@@ -415,7 +415,7 @@ const Artist = () => {
             {/* LEFT → About */}
             <div>
               <h3 className="text-xl sm:text-2xl mb-4">
-                Tell Us About Yourself*
+                Tell Us About Yourself<span className="text-red-500">*</span>
               </h3>
 
               <textarea
@@ -429,7 +429,7 @@ const Artist = () => {
 
             {/* RIGHT → Portfolio */}
             <div>
-              <h3 className="text-xl sm:text-2xl mb-4">Upload Portfolio*</h3>
+              <h3 className="text-xl sm:text-2xl mb-4">Upload Portfolio<span className="text-red-500">*</span></h3>
 
               <label className="w-full min-h-[320px] border-2 border-dashed border-zinc-300 rounded-[2rem] flex flex-col items-center justify-center text-center px-5 cursor-pointer hover:border-black duration-300">
                 <input
@@ -471,7 +471,7 @@ const Artist = () => {
           </div>
 
           <div className="mb-14">
-            <h3 className="text-xl sm:text-2xl mb-6">Verification*</h3>
+            <h3 className="text-xl sm:text-2xl mb-6">Verification<span className="text-red-500">*</span></h3>
 
             {/* ID Selection */}
             <div className="flex flex-wrap gap-4 mb-8">
@@ -481,7 +481,7 @@ const Artist = () => {
                     key={index}
                     type="button"
                     onClick={() => setSelectedGovtId(item)}
-                    className={`px-5 py-3 rounded-full border duration-300 ${
+                    className={`px-5 py-3 rounded-full border duration-300 cursor-pointer ${
                       selectedGovtId === item
                         ? "bg-black text-white border-black"
                         : "border-zinc-300 hover:border-black"

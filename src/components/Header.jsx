@@ -83,14 +83,14 @@ const Header = () => {
           <div className="flex flex-col sm:flex-row gap-5">
             {/* Book Consultation */}
             <Link to="/bookConsultation">
-              <button className="bg-red-700 hover:bg-red-800 text-white px-7 py-4 rounded-xl duration-300">
+              <button className="bg-red-700 hover:bg-red-800 text-white px-7 py-4 rounded-xl duration-300 cursor-pointer">
               Book Consultation
             </button>
             </Link>
 
             {/* Join Artist */}
             <Link to="/artist">
-              <button className="bg-red-700 hover:bg-red-800 text-white px-7 py-4 rounded-xl duration-300">
+              <button className="bg-red-700 hover:bg-red-800 text-white px-7 py-4 rounded-xl duration-300 cursor-pointer">
               Join As Artist
             </button>
             </Link>

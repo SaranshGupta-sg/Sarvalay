@@ -86,7 +86,7 @@ const HorizontalScroll = () => {
                           duration: 0.8,
                           ease: [0.22, 1, 0.36, 1],
                         }}
-                        className="headland-one-regular text-6xl sm:text-5xl md:text-6xl lg:text-[8rem] leading-none font-light tracking-tight"
+                        className="font-helvetica-black text-6xl sm:text-5xl md:text-6xl lg:text-[8rem] leading-none font-light tracking-tight"
                       >
                         Projects
                       </motion.h1>

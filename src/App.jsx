@@ -14,6 +14,7 @@ import BookConsultation from "./components/BookConsultation";
 import Artist from "./components/Artist";
 
 import ScrollToTop from "./components/ScrollToTop";
+import Testimonials from "./components/Testimonials";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
 
             <Header />
             <Carousel />
+            <Testimonials />
 
             {/* WORK */}
             <div id="work">
