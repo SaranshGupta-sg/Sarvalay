@@ -17,6 +17,8 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleNavClick = (section) => {
+    setShowMenu(false); // Mobile menu close
+
     if (location.pathname !== "/") {
       navigate("/");
 
@@ -87,7 +89,10 @@ const Navbar = () => {
             {navLinks.map((link, index) => (
               <button
                 key={index}
-                onClick={() => handleNavClick(link.to)}
+                onClick={() => {
+                  setShowMenu(false);
+                  handleNavClick(link.to);
+                }}
                 className="relative text-lg cursor-pointer transition hover:text-zinc-700 before:content-[''] before:absolute before:left-0 before:-bottom-2 before:w-0 before:h-[2px] before:bg-[#ee0653] before:transition-all before:duration-500 hover:before:w-full"
               >
                 {link.name}
