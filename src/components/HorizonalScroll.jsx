@@ -9,21 +9,21 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
-    image: "/images/img-1.jpg",
+    image: "/images/img-5.jpeg",
     title: "Modern Fashion Website",
     description:
       "A clean and modern ecommerce experience designed for fashion brands with smooth animations and responsive layouts.",
   },
 
   {
-    image: "/images/img-2.jpg",
+    image: "/images/img-1.jpeg",
     title: "Creative Portfolio Design",
     description:
       "An immersive portfolio website created for a digital creator featuring cinematic transitions and interactive sections.",
   },
 
   {
-    image: "/images/img-3.jpg",
+    image: "/images/img-2.jpeg",
     title: "Luxury Brand Landing Page",
     description:
       "Premium landing page with elegant typography, fullscreen visuals, and engaging scrolling interactions.",
@@ -143,11 +143,11 @@ const HorizontalScroll = () => {
 
                     {/* Content */}
                     <div className="p-4 sm:p-5 md:p-6 bg-white">
-                      <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+                      <h2 className="font-helvetica-black text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold">
                         {project.title}
                       </h2>
 
-                      <p className="mt-2 text-sm sm:text-base md:text-lg text-zinc-600 leading-relaxed max-w-3xl">
+                      <p className="roboto-condensed mt-2 text-sm sm:text-base md:text-lg text-zinc-600 leading-relaxed max-w-3xl">
                         {project.description}
                       </p>
                     </div>

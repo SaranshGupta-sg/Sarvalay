@@ -228,7 +228,7 @@ const Artist = () => {
     <div className="min-h-screen bg-white text-black">
       <Navbar />
 
-      <section className="pt-28 sm:pt-32 lg:pt-36 pb-20 px-5 sm:px-8 md:px-12 lg:px-20">
+      <section className="roboto-condensed pt-28 sm:pt-32 lg:pt-36 pb-20 px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="max-w-6xl">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[7rem] leading-none tracking-tight font-light">
             Ready to create

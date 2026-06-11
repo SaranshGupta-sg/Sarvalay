@@ -57,7 +57,7 @@ const Ready = () => {
       <div className="w-max">
         <h2
           ref={textRef}
-          className="whitespace-nowrap text-[30vw] sm:text-[22vw] md:text-[14vw] lg:text-[10vw] leading-none font-light tracking-tight pl-[20vw] sm:pl-[15vw] md:pl-[10vw] pr-[60vw] sm:pr-[80vw] md:pr-[100vw] will-change-transform"
+          className="roboto-condensed whitespace-nowrap text-[30vw] sm:text-[22vw] md:text-[14vw] lg:text-[10vw] leading-none font-light tracking-tight pl-[20vw] sm:pl-[15vw] md:pl-[10vw] pr-[60vw] sm:pr-[80vw] md:pr-[100vw] will-change-transform"
         >
           so are you ready to turn some heads?
         </h2>

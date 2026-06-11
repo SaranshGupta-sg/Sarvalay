@@ -5,7 +5,7 @@ const Carousel = () => {
   const bottomRow = ["LazyChunks", "Reboot", "Alora", "Espresso", "Sevva"];
 
   return (
-    <section className="w-full bg-white overflow-hidden pt-28 sm:pt-32 lg:pt-36 pb-20">
+    <section className="w-full min-h-[70vh] sm:min-h-screen bg-white overflow-hidden pt-28 sm:pt-32 lg:pt-36 pb-20">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 120 }}
@@ -15,9 +15,9 @@ const Carousel = () => {
           duration: 1,
           ease: [0.22, 1, 0.36, 1],
         }}
-        className="text-center px-6 mb-16 sm:mb-20 lg:mb-24"
+        className="text-center px-6 mb-36 sm:mb-20 lg:mb-24"
       >
-        <h1 className="roboto-condensed text-2xl sm:text-4xl md:text-6xl lg:text-[5rem] leading-[1.05] font-light tracking-tight text-black max-w-6xl mx-auto">
+        <h1 className="roboto-condensed text-3xl sm:text-4xl md:text-6xl lg:text-[5rem] leading-[1.05] font-light tracking-tight text-black max-w-6xl mx-auto">
           Stories worth telling, brands
           <br />
           worth building

@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 const Header = () => {
   return (
     <section
-      className="relative w-full h-screen bg-cover bg-[center_right_35%] sm:bg-center flex items-center pt-12 sm:pt-16 lg:pt-20 px-6 sm:px-12 lg:px-20 overflow-hidden"
+      className="roboto-condensed relative w-full h-screen bg-cover bg-[center_right_35%] sm:bg-center flex items-center pt-12 sm:pt-16 lg:pt-20 px-6 sm:px-12 lg:px-20 overflow-hidden"
       style={{
-        backgroundImage: "url('/images/header-bg.png')",
+        backgroundImage: "url('/images/header.jpeg')",
       }}
     >
       {/* Light Overlay */}

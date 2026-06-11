@@ -5,29 +5,25 @@ const services = [
     title: "Wall Art & Murals",
     description:
       "Custom hand-painted murals and wall art that bring your space, brand and story to life.",
-    image:
-      "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/item1.jpeg",
   },
   {
     title: "Art Installations",
     description:
       "Large-scale and bespoke art installations crafted to enhance environments and create unforgettable experiences.",
-    image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/item2.jpeg",
   },
   {
     title: "Space Transformation",
     description:
       "End-to-end transformation of commercial spaces aligned with your vision, brand and audience.",
-    image:
-      "https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/item3.jpeg",
   },
   {
     title: "Art Maintenance & Restoration",
     description:
       "Long-term care, maintenance and restoration to keep your art as stunning as day one.",
-    image:
-      "https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/item4.jpeg",
   },
 ];
 
@@ -67,7 +63,7 @@ const Services = () => {
             duration: 0.8,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="headland-one-regular border border-red-200 rounded-full px-5 py-2 text-xs sm:text-sm tracking-[0.25em] uppercase text-red-700 bg-white"
+          className="font-helvetica-black border border-red-200 rounded-full px-5 py-2 text-xs sm:text-sm tracking-[0.25em] uppercase text-red-700 bg-white"
         >
           Services We Provide
         </motion.div>
@@ -119,13 +115,13 @@ const Services = () => {
 
             {/* Content */}
             <div className="p-7">
-              <h3 className="text-2xl sm:text-3xl leading-tight font-light">
+              <h3 className="font-helvetica-black text-2xl sm:text-3xl leading-tight font-light">
                 {service.title}
               </h3>
 
               <div className="w-12 h-[2px] bg-red-700 mt-5 mb-5"></div>
 
-              <p className="text-zinc-600 leading-relaxed text-sm sm:text-base">
+              <p className="roboto-condensed text-zinc-600 leading-relaxed text-sm sm:text-base">
                 {service.description}
               </p>
             </div>
@@ -145,11 +141,11 @@ const Services = () => {
                   : ""
               }`}
             >
-              <h4 className="text-base font-semibold text-black">
+              <h4 className="roboto-condensed text-base font-semibold text-black">
                 {item.title}
               </h4>
 
-              <p className="mt-3 text-sm text-zinc-600 leading-relaxed">
+              <p className="roboto-condensed mt-3 text-sm text-zinc-600 leading-relaxed">
                 {item.desc}
               </p>
             </div>

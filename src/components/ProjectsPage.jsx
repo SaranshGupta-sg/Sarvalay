@@ -5,42 +5,42 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    image: "/images/img-1.jpg",
+    image: "/images/img-1.jpeg",
     title: "Modern Fashion Website",
     description:
       "A clean and modern ecommerce experience designed for fashion brands.",
   },
 
   {
-    image: "/images/img-2.jpg",
+    image: "/images/img-2.jpeg",
     title: "Creative Portfolio Design",
     description:
       "An immersive portfolio website with smooth animations and interactions.",
   },
 
   {
-    image: "/images/img-3.jpg",
+    image: "/images/img-3.jpeg",
     title: "Luxury Brand Landing Page",
     description:
       "Premium landing page with elegant typography and fullscreen visuals.",
   },
 
   {
-    image: "/images/img-4.jpg",
+    image: "/images/img-4.jpeg",
     title: "Startup Product Showcase",
     description:
       "A responsive product showcase focused on smooth user experience.",
   },
 
   {
-    image: "/images/img-1.jpg",
+    image: "/images/img-5.jpeg",
     title: "Creative Agency Website",
     description:
       "Modern agency website with cinematic design and smooth transitions.",
   },
 
   {
-    image: "/images/img-2.jpg",
+    image: "/images/img-2.jpeg",
     title: "Minimal Portfolio",
     description:
       "Clean and minimal portfolio experience for creators and brands.",
@@ -75,11 +75,11 @@ const ProjectsPage = () => {
               </div>
 
               <div className="mt-5">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight">
+                <h2 className="font-helvetica-black text-2xl sm:text-3xl lg:text-4xl font-light tracking-tight">
                   {project.title}
                 </h2>
 
-                <p className="mt-3 text-zinc-400 text-sm sm:text-base lg:text-lg leading-relaxed">
+                <p className="roboto-condensed mt-3 text-zinc-500 text-sm sm:text-base lg:text-lg leading-relaxed">
                   {project.description}
                 </p>
               </div>

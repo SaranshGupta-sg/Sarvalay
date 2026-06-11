@@ -55,7 +55,7 @@ const Navbar = () => {
               <button
                 key={index}
                 onClick={() => handleNavClick(link.to)}
-                className="relative text-lg cursor-pointer transition hover:text-zinc-700 before:content-[''] before:absolute before:left-0 before:-bottom-2 before:w-0 before:h-[2px] before:bg-[#ee0653] before:transition-all before:duration-500 hover:before:w-full"
+                className="roboto-condensed relative text-lg cursor-pointer transition hover:text-zinc-700 before:content-[''] before:absolute before:left-0 before:-bottom-2 before:w-0 before:h-[2px] before:bg-[#ee0653] before:transition-all before:duration-500 hover:before:w-full"
               >
                 {link.name}
               </button>
@@ -64,8 +64,8 @@ const Navbar = () => {
 
           {/* Button */}
           <Link to="/bookConsultation">
-            <button className="relative overflow-hidden bg-black text-white px-5 py-3 rounded-full text-md font-medium cursor-pointer transition-all duration-500 border border-black hover:text-black before:absolute before:top-0 before:left-[-100%] before:w-full before:h-full before:bg-white before:transition-all before:duration-500 hover:before:left-0">
-              <span className="relative z-10">Book Consultation</span>
+            <button className="roboto-condensed bg-black text-white px-6 py-3 rounded-full text-md font-medium border border-black cursor-pointer transition-transform duration-300 ease-out origin-center hover:scale-105 active:scale-95">
+              Book Consultation
             </button>
           </Link>
         </div>
@@ -85,7 +85,7 @@ const Navbar = () => {
           {/* Nav Links */}
           <nav className="flex flex-col items-center gap-8">
             {navLinks.map((link, index) => (
-               <button
+              <button
                 key={index}
                 onClick={() => handleNavClick(link.to)}
                 className="relative text-lg cursor-pointer transition hover:text-zinc-700 before:content-[''] before:absolute before:left-0 before:-bottom-2 before:w-0 before:h-[2px] before:bg-[#ee0653] before:transition-all before:duration-500 hover:before:w-full"

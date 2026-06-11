@@ -177,20 +177,20 @@ const BookConsultation = () => {
       <section className="pt-28 sm:pt-32 lg:pt-36 pb-20 px-5 sm:px-8 md:px-12 lg:px-20">
         {/* Heading */}
         <div className="max-w-6xl">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[7rem] leading-none tracking-tight font-light">
+          <h1 className="roboto-condensed text-5xl sm:text-6xl md:text-7xl lg:text-[7rem] leading-none tracking-tight font-light">
             Let’s build your
             <br />
             next big project.
           </h1>
 
-          <p className="mt-6 text-zinc-600 text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed">
+          <p className="roboto-condensed mt-6 text-zinc-600 text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed">
             Tell us about your vision, your space, and your requirements. We’ll
             help transform your ideas into a premium digital experience.
           </p>
         </div>
 
         {/* Form */}
-        <form className="mt-16 sm:mt-20 max-w-5xl" onSubmit={handleSubmit}>
+        <form className="roboto-condensed mt-16 sm:mt-20 max-w-5xl" onSubmit={handleSubmit}>
           {/* Your Name */}
           <div className="mb-10">
             <h3 className="text-xl sm:text-2xl mb-4">Your Name<span className="text-red-500">*</span></h3>
