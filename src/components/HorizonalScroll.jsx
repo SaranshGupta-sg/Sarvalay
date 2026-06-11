@@ -77,20 +77,21 @@ const HorizontalScroll = () => {
                     className="w-screen h-screen shrink-0 bg-white text-black px-5 sm:px-8 md:px-12 lg:px-20 py-20 sm:py-24 lg:py-30 flex flex-col justify-center"
                   >
                     {/* Top Heading */}
-                    <div className="translate-y-[-20px] sm:translate-y-[-30px] lg:translate-y-[-40px]">
-                      <motion.h1
-                        initial={{ opacity: 0, y: 120 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.3 }}
-                        transition={{
-                          duration: 0.8,
-                          ease: [0.22, 1, 0.36, 1],
-                        }}
-                        className="font-helvetica-black text-6xl sm:text-5xl md:text-6xl lg:text-[8rem] leading-none font-light tracking-tight"
-                      >
+                    <motion.div
+                      initial={{ opacity: 0, y: 120 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: false, amount: 0.3 }}
+                      transition={{
+                        duration: 0.8,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
+                      className="translate-y-[-20px] sm:translate-y-[-30px] lg:translate-y-[-40px]"
+                    >
+                      <h1 className="font-helvetica-black text-6xl sm:text-5xl md:text-6xl lg:text-[8rem] leading-none font-light tracking-tight">
                         Projects
-                      </motion.h1>
-                    </div>
+                      </h1>
+                      <div className="w-24 h-1.5 bg-red-500 rounded-full mt-5"></div>
+                    </motion.div>
 
                     {/* Space Between */}
                     <div className="h-20 sm:h-28 lg:h-22" />
@@ -114,9 +115,7 @@ const HorizontalScroll = () => {
 
                       {/* Button */}
                       <Link to="/projects">
-                        <button
-                          className="headland-one-regular text-orange-500 text-2xl sm:text-3xl md:text-4xl lg:text-5xl underline underline-offset-8 whitespace-nowrap hover:opacity-80 duration-300 self-start lg:self-end cursor-pointer"
-                        >
+                        <button className="headland-one-regular text-orange-500 text-2xl sm:text-3xl md:text-4xl lg:text-5xl underline underline-offset-8 whitespace-nowrap hover:opacity-80 duration-300 self-start lg:self-end cursor-pointer">
                           See More ↗
                         </button>
                       </Link>
