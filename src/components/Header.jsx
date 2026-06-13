@@ -18,18 +18,23 @@ const Header = () => {
       {/* Content */}
       <div className="relative z-10 w-full max-w-4xl mt-10 sm:mt-0">
         {/* Small Heading */}
-        <motion.p
-          initial={{ opacity: 0, y: 120 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{
-            duration: 0.8,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="text-[9px] sm:text-sm tracking-[2px] sm:tracking-[4px] uppercase mb-3 sm:mb-4 text-white"
-        >
-          ART EXECUTION PLATFORM
-        </motion.p>
+
+        <div className="flex items-center gap-3 mb-5 sm:mb-4">
+          <div className="w-6 h-px bg-red-500" />
+          <motion.p
+            initial={{ opacity: 0, y: 120 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="text-[9px] sm:text-sm tracking-[2px] sm:tracking-[4px] uppercase text-red-500"
+            style={{ letterSpacing: "5px" }}
+          >
+            ART EXECUTION PLATFORM
+          </motion.p>
+        </div>
 
         {/* Main Heading */}
         <motion.h1
@@ -41,7 +46,7 @@ const Header = () => {
             delay: 0.15,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="text-[2rem] leading-[1.15] sm:text-5xl sm:leading-[1.08] lg:text-7xl lg:leading-[1.05] font-semibold max-w-[95%] sm:max-w-full text-white"
+          className="text-[2rem] leading-[1.25] sm:text-5xl sm:leading-[1.08] lg:text-7xl lg:leading-[1.05] font-semibold max-w-[95%] sm:max-w-full text-white"
         >
           We Transform
           <br />
@@ -61,7 +66,7 @@ const Header = () => {
             delay: 0.35,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="text-white text-xs sm:text-base mt-5 sm:mt-6 leading-6 sm:leading-7 max-w-[95%] sm:max-w-xl"
+          className="text-white text-sm sm:text-base mt-7 sm:mt-6 leading-7 sm:leading-7 max-w-[95%] sm:max-w-xl"
         >
           From concept to installation and long-term care, Sarvalay delivers
           end-to-end art solutions with verified artists, precision execution,
@@ -77,38 +82,34 @@ const Header = () => {
             delay: 0.55,
             ease: [0.22, 1, 0.36, 1],
           }}
-          className="flex flex-col gap-5 mt-8"
+          className="flex flex-col gap-5 mt-10 sm:mt-8"
         >
           {/* Top Buttons */}
-          <div className="flex flex-col sm:flex-row gap-5">
+          <div className="flex flex-col sm:flex-row gap-8 sm:gap-5">
             {/* Book Consultation */}
             <Link to="/bookConsultation">
-              <button className="bg-red-700 hover:bg-red-800 text-white px-7 py-4 rounded-xl duration-300 cursor-pointer">
-              Book Consultation
-            </button>
+              <div className="group relative inline-block">
+                <button className="px-8 py-4 rounded-2xl bg-red-600 hover:bg-red-700 text-white font-medium transition-all duration-300 hover:scale-105 shadow-[0_15px_40px_rgba(220,38,38,0.35)] cursor-pointer">
+                  Book Consultation
+                </button>
+
+                <span className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm text-black bg-white/80 px-3 py-1 rounded-lg pointer-events-none">
+                  Problem
+                </span>
+              </div>
             </Link>
 
             {/* Join Artist */}
             <Link to="/artist">
-              <button className="bg-red-700 hover:bg-red-800 text-white px-7 py-4 rounded-xl duration-300 cursor-pointer">
-              Join As Artist
-            </button>
-            </Link>
-          </div>
+              <div className="group relative inline-block">
+                <button className="px-8 py-4 rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 cursor-pointer">
+                  Join As Artist
+                </button>
 
-          {/* Explore Projects */}
-          <div>
-            <Link to="/projects">
-              <button className="group flex items-center justify-between gap-12 bg-white/10 backdrop-blur-md border border-white/20 hover:border-white/40 text-white px-8 py-4 rounded-2xl text-sm sm:text-base font-medium transition-all duration-300 hover:bg-white hover:text-black shadow-lg cursor-pointer min-w-7.5px">
-                <div className="flex items-center gap-4">
-                  <span>Explore Projects</span>
-                </div>
-
-                {/* Arrow */}
-                <span className="text-2xl transition-transform duration-300 group-hover:translate-x-1">
-                  →
+                <span className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm text-black bg-white/80 px-3 py-1 rounded-lg pointer-events-none">
+                  Solution
                 </span>
-              </button>
+              </div>
             </Link>
           </div>
         </motion.div>

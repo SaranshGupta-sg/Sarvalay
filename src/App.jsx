@@ -14,59 +14,60 @@ import BookConsultation from "./components/BookConsultation";
 import Artist from "./components/Artist";
 
 import ScrollToTop from "./components/ScrollToTop";
-import Testimonials from "./components/Testimonials";
+// import Testimonials from "./components/Testimonials";
+
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
 
 const App = () => {
   return (
     <>
-    <ScrollToTop />
-    <Routes>
-      {/* Home Page */}
-      <Route
-        path="/"
-        element={
-          <div className="w-full min-h-screen">
-            <Navbar />
+      <ScrollToTop />
 
-            <Header />
-            <Carousel />
-            <Testimonials />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="w-full min-h-screen">
+              <Navbar />
 
-            {/* WORK */}
-            <div id="work">
-              <HorizonalScroll />
+              <Header />
+              <Carousel />
+              {/* <Testimonials /> */}
+
+              <div id="work">
+                <HorizonalScroll />
+              </div>
+
+              <div id="services">
+                <Services />
+              </div>
+
+              <div id="about">
+                <About />
+              </div>
+
+              <Ready />
+              <Footer />
             </div>
+          }
+        />
 
-            {/* SERVICES */}
-            <div id="services">
-              <Services />
+        <Route
+          path="/projects"
+          element={
+            <div className="w-full min-h-screen bg-black text-white">
+              <ProjectsPage />
             </div>
+          }
+        />
 
-            {/* ABOUT */}
-            <div id="about">
-              <About />
-            </div>
+        <Route path="/bookConsultation" element={<BookConsultation />} />
 
-            <Ready />
-            <Footer />
-          </div>
-        }
-      />
-
-      {/* Projects Page */}
-      <Route
-        path="/projects"
-        element={
-          <div className="w-full min-h-screen bg-black text-white">
-            <ProjectsPage />
-          </div>
-        }
-      />
-
-      <Route path="/bookConsultation" element={<BookConsultation />} />
-
-      <Route path="/artist" element={<Artist />} />
-    </Routes>
+        <Route path="/artist" element={<Artist />} />
+      </Routes>
     </>
   );
 };

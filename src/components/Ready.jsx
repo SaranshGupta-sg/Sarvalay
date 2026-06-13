@@ -8,43 +8,46 @@ gsap.registerPlugin(ScrollTrigger);
 const Ready = () => {
   const containerRef = useRef(null);
   const textRef = useRef(null);
+  const bgRef = useRef(null);
 
   useGSAP(
     () => {
       const text = textRef.current;
 
-      const getScrollAmount = () => {
-        return -(text.scrollWidth - window.innerWidth + 300);
-      };
+      const getScrollAmount = () =>
+        -(text.scrollWidth - window.innerWidth + 300);
 
-      gsap.fromTo(
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: () => `+=${text.scrollWidth + window.innerHeight}`,
+          scrub: 2,
+          pin: true,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        },
+      });
+
+      // Text scroll
+      tl.fromTo(
         text,
         {
           x: window.innerWidth < 768 ? 200 : 500,
-          scale: 0.95,
-          opacity: 0.7,
+          scale: 0.96,
+          opacity: 0.5,
         },
         {
           x: getScrollAmount,
           scale: 1,
           opacity: 1,
           ease: "none",
-
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top top",
-
-            end: () => `+=${text.scrollWidth + window.innerHeight}`,
-
-            scrub: 2,
-            pin: true,
-            anticipatePin: 1,
-            invalidateOnRefresh: true,
-
-            // markers: true,
-          },
         },
+        0,
       );
+
+      // Background subtle animation
+      tl.fromTo(bgRef.current, { opacity: 0 }, { opacity: 1, ease: "none" }, 0);
     },
     { scope: containerRef },
   );
@@ -52,15 +55,80 @@ const Ready = () => {
   return (
     <section
       ref={containerRef}
-      className="h-screen w-full bg-[#ececec] text-black overflow-hidden flex items-center"
+      className="h-screen w-full overflow-hidden flex items-center relative"
+      style={{ background: "#ffffff" }}
     >
-      <div className="w-max">
+      {/* Background texture grain */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          backgroundSize: "120px",
+        }}
+      />
+
+      {/* Subtle background glow */}
+      <div
+        ref={bgRef}
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse at 50% 50%, rgba(238,6,83,0.04) 0%, transparent 65%)",
+        }}
+      />
+
+      {/* Top & bottom accent lines */}
+      <div
+        className="absolute top-0 left-0 right-0 h-px"
+        style={{
+          background:
+            "linear-gradient(to right, transparent, rgb(253, 6, 83), transparent)",
+        }}
+      />
+
+      <div
+        className="absolute bottom-0 left-0 right-0 h-px"
+        style={{
+          background:
+            "linear-gradient(to right, transparent, rgba(238,6,83,0.25), transparent)",
+        }}
+      />
+
+      {/* Scrolling text */}
+      <div className="w-max relative z-10">
         <h2
           ref={textRef}
-          className="roboto-condensed whitespace-nowrap text-[30vw] sm:text-[22vw] md:text-[14vw] lg:text-[10vw] leading-none font-light tracking-tight pl-[20vw] sm:pl-[15vw] md:pl-[10vw] pr-[60vw] sm:pr-[80vw] md:pr-[100vw] will-change-transform"
+          className="roboto-condensed whitespace-nowrap leading-none font-light tracking-tight will-change-transform"
+          style={{
+            fontSize: "clamp(14vw, 16vw, 18vw)",
+            paddingLeft: "clamp(8vw, 12vw, 20vw)",
+            paddingRight: "clamp(50vw, 80vw, 100vw)",
+            color: "#000000",
+          }}
         >
-          so are you ready to turn some heads?
+          so are you ready to{" "}
+          <span
+            style={{
+              background: "linear-gradient(to right, #dc2626, #7f1d1d)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            turn some heads?
+          </span>
         </h2>
+      </div>
+
+      {/* Corner brand mark */}
+      <div
+        className="absolute top-8 right-8 hidden sm:flex flex-col items-end gap-1"
+        style={{ opacity: 0.3 }}
+      >
+        <span className="roboto-condensed text-black text-[9px] uppercase tracking-[5px]">
+          Sarvalay
+        </span>
+        <div className="w-8 h-px bg-black" />
       </div>
     </section>
   );
