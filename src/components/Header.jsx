@@ -6,14 +6,17 @@ const Header = () => {
     <section
       className="roboto-condensed relative w-full h-screen bg-cover bg-[center_right_35%] sm:bg-center flex items-center pt-12 sm:pt-16 lg:pt-20 px-6 sm:px-12 lg:px-20 overflow-hidden"
       style={{
-        backgroundImage: "url('/images/header.jpeg')",
+        backgroundImage: "url('/images/new.jpeg')",
       }}
     >
-      {/* Light Overlay */}
-      <div className="absolute inset-0 bg-black/35"></div>
-
       {/* Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/0.5 to-transparent"></div>
+<div
+  className="absolute inset-0"
+  style={{
+    background:
+      "linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 65%, transparent 100%)",
+  }}
+></div>
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-4xl mt-10 sm:mt-0">
