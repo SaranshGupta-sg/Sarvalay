@@ -6,7 +6,7 @@ import Carousel from "./components/Carousel";
 import HorizonalScroll from "./components/HorizonalScroll";
 import Services from "./components/Services";
 import About from "./components/About";
-import Ready from "./components/Ready";
+// import Ready from "./components/Ready";
 import Footer from "./components/Footer";
 
 import ProjectsPage from "./components/ProjectsPage";
@@ -14,7 +14,7 @@ import BookConsultation from "./components/BookConsultation";
 import Artist from "./components/Artist";
 
 import ScrollToTop from "./components/ScrollToTop";
-// import Testimonials from "./components/Testimonials";
+import Testimonials from "./components/Testimonials";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -35,7 +35,7 @@ const App = () => {
 
               <Header />
               <Carousel />
-              {/* <Testimonials /> */}
+              <Testimonials />
 
               <div id="work">
                 <HorizonalScroll />
@@ -49,7 +49,7 @@ const App = () => {
                 <About />
               </div>
 
-              <Ready />
+              {/* <Ready /> */}
               <Footer />
             </div>
           }

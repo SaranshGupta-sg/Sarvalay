@@ -152,9 +152,10 @@ const Footer = () => {
             </h2>
 
             {/* CTA button */}
-            <button
+            <div className="flex flex-col sm:flex-row gap-4 mt-10">
+              <button
               onClick={() => navigate("/bookConsultation")}
-              className="group roboto-condensed relative overflow-hidden mt-10 flex items-center gap-4 px-8 py-4 rounded-2xl font-medium text-white transition-shadow duration-300"
+              className="group roboto-condensed relative overflow-hidden flex items-center gap-4 px-8 py-4 rounded-2xl font-medium text-white transition-shadow duration-300 cursor-pointer"
               style={{
                 background: "linear-gradient(135deg, #dc2626, #991b1b)",
                 boxShadow: "0 8px 32px rgba(220,38,38,0.35)",
@@ -184,6 +185,39 @@ const Footer = () => {
                 →
               </span>
             </button>
+            <button
+              onClick={() => navigate("/artist")}
+              className="group roboto-condensed relative overflow-hidden flex items-center gap-4 px-8 py-4 rounded-2xl font-medium text-white transition-shadow duration-300 cursor-pointer"
+              style={{
+                background: "linear-gradient(135deg, #dc2626, #991b1b)",
+                boxShadow: "0 8px 32px rgba(220,38,38,0.35)",
+                fontSize: "clamp(0.9rem, 1.1vw, 1rem)",
+                letterSpacing: "0.04em",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.boxShadow =
+                  "0 16px 48px rgba(220,38,38,0.55)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.boxShadow =
+                  "0 8px 32px rgba(220,38,38,0.35)")
+              }
+            >
+              <span
+                className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"
+                style={{
+                  background:
+                    "linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent)",
+                }}
+              />
+
+              <span className="relative">Join as Artist</span>
+
+              <span className="relative text-lg transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </button>
+            </div>
 
             {/* Small note */}
             <p
@@ -194,7 +228,7 @@ const Footer = () => {
                 color: "rgba(255,255,255,0.3)",
               }}
             >
-              Free consultation · No commitment
+              Free consultation
             </p>
           </motion.div>
 
@@ -331,7 +365,7 @@ const Footer = () => {
         </motion.div>
       </div>
 
-      {/* ── Big brand name ── */}
+      {/* ── Big brand name ──
       <div className="overflow-hidden" ref={brandRef}>
         <h1
           className="roboto-condensed text-center font-semibold whitespace-nowrap select-none leading-none"
@@ -348,7 +382,7 @@ const Footer = () => {
         >
           SARVALAY
         </h1>
-      </div>
+      </div> */}
     </footer>
   );
 };

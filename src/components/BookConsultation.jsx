@@ -190,10 +190,15 @@ const BookConsultation = () => {
         </div>
 
         {/* Form */}
-        <form className="roboto-condensed mt-16 sm:mt-20 max-w-5xl" onSubmit={handleSubmit}>
+        <form
+          className="roboto-condensed mt-16 sm:mt-20 max-w-5xl"
+          onSubmit={handleSubmit}
+        >
           {/* Your Name */}
           <div className="mb-10">
-            <h3 className="text-xl sm:text-2xl mb-4">Your Name<span className="text-red-500">*</span></h3>
+            <h3 className="text-xl sm:text-2xl mb-4">
+              Your Name<span className="text-red-500">*</span>
+            </h3>
 
             <input
               type="text"
@@ -206,7 +211,9 @@ const BookConsultation = () => {
 
           {/* Email */}
           <div className="mb-10">
-            <h3 className="text-xl sm:text-2xl mb-4">Email<span className="text-red-500">*</span></h3>
+            <h3 className="text-xl sm:text-2xl mb-4">
+              Email<span className="text-red-500">*</span>
+            </h3>
 
             <input
               type="email"
@@ -219,7 +226,9 @@ const BookConsultation = () => {
 
           {/* Phone */}
           <div className="mb-10">
-            <h3 className="text-xl sm:text-2xl mb-4">Phone<span className="text-red-500">*</span></h3>
+            <h3 className="text-xl sm:text-2xl mb-4">
+              Phone<span className="text-red-500">*</span>
+            </h3>
 
             <input
               type="text"
@@ -247,7 +256,9 @@ const BookConsultation = () => {
 
           {/* Upload Space */}
           <div className="mb-10">
-            <h3 className="text-xl sm:text-2xl mb-4">Share Your Space<span className="text-red-500">*</span></h3>
+            <h3 className="text-xl sm:text-2xl mb-4">
+              Share Your Space<span className="text-red-500">*</span>
+            </h3>
 
             <label className="w-full min-h-[240px] border-2 border-dashed border-zinc-300 rounded-3xl flex flex-col items-center justify-center text-center px-5 cursor-pointer hover:border-black duration-300">
               <input
@@ -285,27 +296,49 @@ const BookConsultation = () => {
 
           {/* Space Type */}
           <div className="mb-10">
-            <h3 className="text-xl sm:text-2xl mb-4">Space Type*</h3>
+            <h3 className="text-xl sm:text-2xl mb-4">Space Type<span className="text-red-500">*</span></h3>
 
-            <input
-              type="text"
+            <select
               required
               name="spaceType"
-              placeholder="Residential, Office, Studio, etc."
               className="w-full border border-zinc-300 rounded-2xl px-5 py-4 bg-white outline-none text-lg focus:border-black duration-300"
-            />
+              defaultValue=""
+            >
+              <option value="" disabled>
+                Select Space Type
+              </option>
+              <option value="Residential">Residential</option>
+              <option value="Offices">Offices</option>
+              <option value="Hotels">Hotels</option>
+              <option value="Educational Institutes">
+                Educational Institutes
+              </option>
+              <option value="Spiritual Sites">Spiritual Sites</option>
+              <option value="Studio">Studio</option>
+              <option value="NGOs">NGOs</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
 
           {/* Project Location */}
           <div className="mb-10">
             <h3 className="text-xl sm:text-2xl mb-4">Project Location</h3>
 
-            <input
-              type="text"
+            <select
               name="projectLocation"
-              placeholder="Enter project location"
               className="w-full border border-zinc-300 rounded-2xl px-5 py-4 bg-white outline-none text-lg focus:border-black duration-300"
-            />
+              defaultValue=""
+            >
+              <option value="" disabled>
+                Select Project Location
+              </option>
+              <option value="Kota">Kota</option>
+              <option value="Jaipur">Jaipur</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Gurugram">Gurugram</option>
+              <option value="Noida">Noida</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
 
           {/* Estimated Area */}

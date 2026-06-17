@@ -10,13 +10,13 @@ const Header = () => {
       }}
     >
       {/* Gradient */}
-<div
-  className="absolute inset-0"
-  style={{
-    background:
-      "linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 65%, transparent 100%)",
-  }}
-></div>
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 65%, transparent 100%)",
+        }}
+      ></div>
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-4xl mt-10 sm:mt-0">
@@ -32,7 +32,7 @@ const Header = () => {
               duration: 0.8,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="text-[9px] sm:text-sm tracking-[2px] sm:tracking-[4px] uppercase text-red-500"
+            className="text-[12px] sm:text-[20px] lg:text-[22px] tracking-[2px] sm:tracking-[6px] uppercase text-red-500 font-semibold whitespace-nowrap"
             style={{ letterSpacing: "5px" }}
           >
             ART EXECUTION PLATFORM
@@ -92,26 +92,30 @@ const Header = () => {
             {/* Book Consultation */}
             <Link to="/bookConsultation">
               <div className="group relative inline-block">
-                <button className="px-8 py-4 rounded-2xl bg-red-600 hover:bg-red-700 text-white font-medium transition-all duration-300 hover:scale-105 shadow-[0_15px_40px_rgba(220,38,38,0.35)] cursor-pointer">
-                  Book Consultation
-                </button>
+                <button className="px-8 py-4 rounded-2xl bg-red-600 hover:bg-red-700 text-white font-medium transition-all duration-300 hover:scale-105 shadow-[0_15px_40px_rgba(220,38,38,0.35)] cursor-pointer relative overflow-hidden">
+                  <span className="opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                    Book Consultation
+                  </span>
 
-                <span className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm text-black bg-white/80 px-3 py-1 rounded-lg pointer-events-none">
-                  Problem
-                </span>
+                  <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Problem
+                  </span>
+                </button>
               </div>
             </Link>
 
             {/* Join Artist */}
             <Link to="/artist">
               <div className="group relative inline-block">
-                <button className="px-8 py-4 rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 cursor-pointer">
-                  Join As Artist
-                </button>
+                <button className="px-8 py-4 rounded-2xl border border-white/20 bg-white/5 backdrop-blur-sm text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 cursor-pointer relative overflow-hidden">
+                  <span className="opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                    Join As Artist
+                  </span>
 
-                <span className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 text-sm text-black bg-white/80 px-3 py-1 rounded-lg pointer-events-none">
-                  Solution
-                </span>
+                  <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Solution
+                  </span>
+                </button>
               </div>
             </Link>
           </div>

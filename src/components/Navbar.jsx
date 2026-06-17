@@ -177,7 +177,8 @@ const Navbar = () => {
           </nav>
 
           {/* CTA */}
-          <div ref={btnRef}>
+          <div ref={btnRef} className="flex items-center gap-3">
+            
             <Link to="/bookConsultation">
               <button
                 className="roboto-condensed relative overflow-hidden px-6 py-2.5 rounded-full text-[14px] font-medium cursor-pointer transition-all duration-300 group"
@@ -209,6 +210,39 @@ const Navbar = () => {
                 />
 
                 <span className="relative">Book Consultation</span>
+              </button>
+            </Link>
+            <Link to="/artist">
+              <button
+                className="roboto-condensed relative overflow-hidden px-6 py-2.5 rounded-full text-[14px] font-medium cursor-pointer transition-all duration-300 group"
+                style={{
+                  background: "#111",
+                  color: "#fff",
+                  border: "1px solid #111",
+                  backdropFilter: "blur(8px)",
+                  letterSpacing: "0.03em",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = "#dc2626";
+                  e.currentTarget.style.borderColor = "#dc2626";
+                  e.currentTarget.style.boxShadow =
+                    "0 6px 20px rgba(220,38,38,0.35)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = "#111";
+                  e.currentTarget.style.borderColor = "#111";
+                  e.currentTarget.style.boxShadow = "none";
+                }}
+              >
+                <span
+                  className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-600 ease-in-out"
+                  style={{
+                    background:
+                      "linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent)",
+                  }}
+                />
+
+                <span className="relative">Join As Artist</span>
               </button>
             </Link>
           </div>
@@ -267,11 +301,11 @@ const Navbar = () => {
 
           <div
             ref={(el) => (mobileLinksRef.current[navLinks.length] = el)}
-            className="mt-12"
+            className="mt-12 flex flex-col gap-4"
           >
             <Link to="/bookConsultation" onClick={() => setShowMenu(false)}>
               <button
-                className="roboto-condensed px-8 py-3.5 rounded-full font-medium text-white cursor-pointer transition-all duration-300"
+                className="roboto-condensed w-full px-8 py-3.5 rounded-full font-medium text-white cursor-pointer transition-all duration-300"
                 style={{
                   background: "linear-gradient(135deg, #dc2626, #991b1b)",
                   boxShadow: "0 8px 24px rgba(220,38,38,0.35)",
@@ -290,6 +324,29 @@ const Navbar = () => {
                 }}
               >
                 Book Consultation
+              </button>
+            </Link>
+            <Link to="/artist" onClick={() => setShowMenu(false)}>
+              <button
+                className="roboto-condensed w-full px-8 py-3.5 rounded-full font-medium text-white cursor-pointer transition-all duration-300"
+                style={{
+                  background: "linear-gradient(135deg, #dc2626, #991b1b)",
+                  boxShadow: "0 8px 24px rgba(220,38,38,0.35)",
+                  letterSpacing: "0.04em",
+                }}
+                onClick={(e) => {
+                  e.currentTarget.style.boxShadow =
+                    "0 12px 36px rgba(220,38,38,0.5)";
+                  e.currentTarget.style.transform = "scale(0.96)";
+
+                  setTimeout(() => {
+                    e.currentTarget.style.boxShadow =
+                      "0 8px 24px rgba(220,38,38,0.35)";
+                    e.currentTarget.style.transform = "scale(1)";
+                  }, 150);
+                }}
+              >
+                Join As Artist
               </button>
             </Link>
           </div>
