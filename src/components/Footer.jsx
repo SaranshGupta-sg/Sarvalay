@@ -124,7 +124,7 @@ const Footer = () => {
               <div className="w-5 h-px bg-red-500" />
               <span
                 className="roboto-condensed uppercase text-[10px] tracking-[5px] font-medium"
-                style={{ color: "#ee0653" }}
+                style={{ color: "#fb2c36" }}
               >
                 Let's Work Together
               </span>
@@ -266,7 +266,7 @@ const Footer = () => {
                   >
                     <span
                       className="w-0 group-hover:w-4 h-px transition-all duration-300 rounded-full"
-                      style={{ background: "#ee0653" }}
+                      style={{ background: "#fb2c36" }}
                     />
                     <span
                       style={{
@@ -316,7 +316,7 @@ const Footer = () => {
                     </span>
                     <span
                       className="text-sm transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                      style={{ color: "#ee0653" }}
+                      style={{ color: "#fb2c36" }}
                     >
                       ↗
                     </span>

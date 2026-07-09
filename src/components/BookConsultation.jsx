@@ -55,7 +55,7 @@ const FieldWrapper = ({ children, label, required, index }) => (
       style={{ color: "#1f1e1e" }}
     >
       {label}
-      {required && <span style={{ color: "#ee0653" }}> *</span>}
+      {required && <span style={{ color: "#fb2c36" }}> *</span>}
     </label>
     {children}
     <div
@@ -88,7 +88,7 @@ const FocusInput = ({ tag: Tag = "input", ...props }) => {
           left: 0,
           height: "2px",
           width: focused ? "100%" : "0%",
-          background: "linear-gradient(to right, #ee0653, #C9A847)",
+          background: "linear-gradient(to right,#fb2c36 , #C9A847)",
           transition: "width 0.4s cubic-bezier(0.22,1,0.36,1)",
           borderRadius: "2px",
         }}
@@ -125,7 +125,7 @@ const FocusSelect = ({ options, ...props }) => {
           left: 0,
           height: "2px",
           width: focused ? "100%" : "0%",
-          background: "linear-gradient(to right, #ee0653, #C9A847)",
+          background: "linear-gradient(to right, #fb2c36, #C9A847)",
           transition: "width 0.4s cubic-bezier(0.22,1,0.36,1)",
           borderRadius: "2px",
         }}
@@ -285,7 +285,7 @@ const BookConsultation = () => {
               className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
               style={{ background: "rgba(238,6,83,0.1)" }}
             >
-              <span style={{ fontSize: "28px", color: "#ee0653" }}>✓</span>
+              <span style={{ fontSize: "28px", color: "#fb2c36" }}>✓</span>
             </div>
             <h2
               className="roboto-condensed font-semibold text-black mb-3"
@@ -304,7 +304,7 @@ const BookConsultation = () => {
               onClick={() => setSubmitted(false)}
               className="roboto-condensed px-8 py-3 rounded-xl text-white font-medium"
               style={{
-                background: "linear-gradient(135deg,#ee0653,#c4003f)",
+                background: "linear-gradient(135deg,#fb2c36,#c4003f)",
                 boxShadow: "0 6px 20px rgba(238,6,83,0.35)",
               }}
             >
@@ -327,7 +327,7 @@ const BookConsultation = () => {
               <div className="w-5 h-px bg-red-500" />
               <span
                 className="roboto-condensed uppercase text-[14px] tracking-[5px] font-medium"
-                style={{ color: "#ee0653" }}
+                style={{ color: "#fb2c36" }}
               >
                 Book Consultation
               </span>
@@ -366,7 +366,7 @@ const BookConsultation = () => {
               style={{
                 width: "80px",
                 height: "4px",
-                background: "linear-gradient(to right,#ee0653,#C9A847)",
+                background: "linear-gradient(to right,#fb2c36,#C9A847)",
               }}
             />
 
@@ -440,7 +440,7 @@ const BookConsultation = () => {
                     minHeight: "200px",
                     borderRadius: "20px",
                     border: dragOver
-                      ? "2px dashed #ee0653"
+                      ? "2px dashed #fb2c36"
                       : files.length > 0
                         ? "2px dashed rgba(238,6,83,0.4)"
                         : "2px dashed rgba(0,0,0,0.12)",
@@ -468,7 +468,7 @@ const BookConsultation = () => {
                         className="w-10 h-10 rounded-full flex items-center justify-center mb-3"
                         style={{ background: "rgba(238,6,83,0.1)" }}
                       >
-                        <span style={{ color: "#ee0653", fontSize: "18px" }}>
+                        <span style={{ color: "#fb2c36", fontSize: "18px" }}>
                           ✓
                         </span>
                       </div>

@@ -23,3 +23,30 @@ git push origin main
 cd "1" 
 javac DataTypes.java
 java DataTypes.java
+
+
+
+
+
+
+
+
+
+      {/* Heading — word stagger via GSAP */}
+      <div ref={headingRef} className="text-center mb-5 overflow-hidden">
+        <h2
+          className="roboto-condensed font-light tracking-tight text-black leading-tight max-w-5xl mx-auto"
+          style={{ fontSize: "clamp(2.2rem, 6vw, 5rem)" }}
+        >
+          <span className="word inline-block mr-[0.25em]">End-to-End</span>
+          <span className="word inline-block mr-[0.25em]">Artistic</span>
+          <span className="word inline-block mr-[0.25em]">Solutions</span>
+          <span className="word inline-block mr-[0.25em]">for</span>
+
+          <span className="word inline-block mx-2 px-3 py-1 rounded-lg  text-red-500">
+            Inspiring
+          </span>
+
+          <span className="word inline-block text-red-500">Spaces</span>
+        </h2>
+      </div>

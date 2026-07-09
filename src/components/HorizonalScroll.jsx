@@ -127,7 +127,7 @@ const ProjectCard = ({ project, index }) => {
             style={{
               fontSize: "11px",
               letterSpacing: "3px",
-              color: "#ee0653",
+              color: "#fb2c36",
               textTransform: "uppercase",
             }}
           >
@@ -149,7 +149,7 @@ const ProjectCard = ({ project, index }) => {
               height: "1px",
               width: hovered ? "80px" : "40px",
               background:
-                "linear-gradient(to right, #ee0653, rgba(238,6,83,0.3))",
+                "linear-gradient(to right, #fb2c36, rgba(238,6,83,0.3))",
             }}
           />
 
@@ -218,7 +218,13 @@ const HorizontalScroll = () => {
                       </h1>
 
                       {/* Red bar */}
-                      <div className="w-20 h-1 rounded-full bg-red-500 mb-12" />
+                      <div
+                        className="w-20 h-1 rounded-full mb-12"
+                        style={{
+                          background:
+                            "linear-gradient(to right, #fb2c36, #C9A847)",
+                        }}
+                      />
 
                       {/* Body quote */}
                       <p

@@ -11,7 +11,7 @@ const services = [
     description:
       "Custom hand-painted murals and wall art that bring your space, brand and story to life.",
     image: "/images/item1.jpeg",
-    accent: "#ee0653",
+    accent: "#fb2c36",
   },
   {
     title: "Art Installations",
@@ -25,7 +25,7 @@ const services = [
     description:
       "End-to-end transformation of commercial spaces aligned with your vision, brand and audience.",
     image: "/images/item3.jpeg",
-    accent: "#ee0653",
+    accent: "#fb2c36",
   },
   {
     title: "Art Maintenance & Restoration",
@@ -221,6 +221,17 @@ const ServiceCard = ({ service, index }) => {
               transform: hovered ? "translateX(0)" : "translateX(-8px)",
             }}
           >
+            <div className="w-4 h-px" style={{ background: service.accent }} />
+            <span
+              className="roboto-condensed uppercase"
+              style={{
+                fontSize: "9px",
+                letterSpacing: "3px",
+                color: service.accent,
+              }}
+            >
+              Learn More
+            </span>
           </div>
         </div>
       </div>
@@ -289,7 +300,10 @@ const Services = () => {
         className="flex items-center justify-center gap-3 mb-7"
       >
         <div className="w-6 h-px bg-red-500" />
-        <span className="roboto-condensed uppercase text-[20px] sm:text-[15px] tracking-[5px] font-medium text-red-500">
+        <span
+          className="roboto-condensed uppercase text-[10px] sm:text-[11px] tracking-[5px] font-medium"
+          style={{ color: "#fb2c36" }}
+        >
           Services We Provide
         </span>
         <div className="w-6 h-px bg-red-500" />
@@ -305,11 +319,7 @@ const Services = () => {
           <span className="word inline-block mr-[0.25em]">Artistic</span>
           <span className="word inline-block mr-[0.25em]">Solutions</span>
           <span className="word inline-block mr-[0.25em]">for</span>
-
-          <span className="word inline-block mx-2 px-3 py-1 rounded-lg  text-red-500">
-            Inspiring
-          </span>
-
+          <span className="word inline-block mr-[0.25em] text-red-500">Inspiring</span>
           <span className="word inline-block text-red-500">Spaces</span>
         </h2>
       </div>

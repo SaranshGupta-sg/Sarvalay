@@ -31,7 +31,7 @@ const SectionLabel = ({ children, required, eyebrow }) => (
     {eyebrow && (
       <span
         className="roboto-condensed uppercase block mb-2"
-        style={{ fontSize: "10px", letterSpacing: "3px", color: "#ee0653" }}
+        style={{ fontSize: "10px", letterSpacing: "3px", color: "#fb2c36" }}
       >
         {eyebrow}
       </span>
@@ -41,7 +41,7 @@ const SectionLabel = ({ children, required, eyebrow }) => (
       style={{ fontSize: "clamp(1.2rem,1.8vw,1.5rem)" }}
     >
       {children}
-      {required && <span style={{ color: "#ee0653" }}> *</span>}
+      {required && <span style={{ color: "#fb2c36" }}> *</span>}
     </h3>
   </div>
 );
@@ -69,7 +69,7 @@ const FocusInput = ({ tag: Tag = "input", ...props }) => {
           left: 0,
           height: "2px",
           width: focused ? "100%" : "0%",
-          background: "linear-gradient(to right,#ee0653,#C9A847)",
+          background: "linear-gradient(to right,#fb2c36,#C9A847)",
           transition: "width 0.4s cubic-bezier(0.22,1,0.36,1)",
           borderRadius: "2px",
         }}
@@ -91,9 +91,9 @@ const Pill = ({ active, onClick, children, accent = false }) => (
       padding: "10px 20px",
       borderRadius: "999px",
       fontSize: "0.9rem",
-      background: active ? "linear-gradient(135deg,#ee0653,#c4003f)" : "#fff",
+      background: active ? "linear-gradient(135deg,#fb2c36,#c4003f)" : "#fff",
       color: active ? "#fff" : "#444",
-      border: active ? "1px solid #ee0653" : "1px solid rgba(0,0,0,0.12)",
+      border: active ? "1px solid #fb2c36" : "1px solid rgba(0,0,0,0.12)",
       boxShadow: active ? "0 6px 18px rgba(238,6,83,0.3)" : "none",
     }}
   >
@@ -119,7 +119,7 @@ const UploadZone = ({
       minHeight: height,
       borderRadius: "24px",
       border: dragOver
-        ? "2px dashed #ee0653"
+        ? "2px dashed #fb2c36"
         : active
           ? "2px dashed rgba(238,6,83,0.4)"
           : "2px dashed rgba(0,0,0,0.12)",
@@ -324,7 +324,7 @@ const Artist = () => {
             <div className="w-5 h-px bg-red-500" />
             <span
               className="roboto-condensed uppercase text-[10px] tracking-[5px] font-medium"
-              style={{ color: "#ee0653" }}
+              style={{ color: "#fb2c36" }}
             >
               Join Our Artist Network
             </span>
@@ -364,7 +364,7 @@ const Artist = () => {
             style={{
               width: "80px",
               height: "4px",
-              background: "linear-gradient(to right,#ee0653,#C9A847)",
+              background: "linear-gradient(to right,#fb2c36,#C9A847)",
             }}
           />
 
@@ -469,12 +469,12 @@ const Artist = () => {
                         src={URL.createObjectURL(profileImage)}
                         alt=""
                         className="w-32 h-32 rounded-full object-cover"
-                        style={{ border: "3px solid #ee0653" }}
+                        style={{ border: "3px solid #fb2c36" }}
                       />
                       <div
                         className="absolute -bottom-1 -right-1 w-7 h-7 rounded-full flex items-center justify-center"
                         style={{
-                          background: "#ee0653",
+                          background: "#fb2c36",
                           border: "2px solid #fff",
                         }}
                       >
@@ -596,7 +596,7 @@ const Artist = () => {
                     padding: "20px",
                     background: "#fafafa",
                   }}
-                  onFocus={(e) => (e.target.style.borderColor = "#ee0653")}
+                  onFocus={(e) => (e.target.style.borderColor = "#fb2c36")}
                   onBlur={(e) =>
                     (e.target.style.borderColor = "rgba(0,0,0,0.1)")
                   }
@@ -639,7 +639,7 @@ const Artist = () => {
                       className="w-12 h-12 rounded-2xl flex items-center justify-center mb-3"
                       style={{ background: "rgba(238,6,83,0.1)" }}
                     >
-                      <span style={{ color: "#ee0653", fontSize: "20px" }}>
+                      <span style={{ color: "#fb2c36", fontSize: "20px" }}>
                         📄
                       </span>
                     </div>
@@ -657,7 +657,7 @@ const Artist = () => {
                     </p>
                     <p
                       className="mt-3 flex items-center gap-1.5"
-                      style={{ color: "#ee0653", fontSize: "12px" }}
+                      style={{ color: "#fb2c36", fontSize: "12px" }}
                     >
                       <span>✓</span> PDF uploaded successfully
                     </p>
@@ -740,7 +740,7 @@ const Artist = () => {
                   </h4>
                   <p
                     className="mt-2 flex items-center gap-1.5"
-                    style={{ color: "#ee0653", fontSize: "12px" }}
+                    style={{ color: "#fb2c36", fontSize: "12px" }}
                   >
                     <span>✓</span> Document uploaded successfully
                   </p>
@@ -812,18 +812,6 @@ const Artist = () => {
                 →
               </span>
             </button>
-            {!isFormValid && (
-              <p
-                className="mt-3 uppercase"
-                style={{
-                  fontSize: "10px",
-                  letterSpacing: "3px",
-                  color: "#bbb",
-                }}
-              >
-                Complete all required fields to continue
-              </p>
-            )}
           </motion.div>
         </form>
 
@@ -855,7 +843,7 @@ const Artist = () => {
                       style={{
                         fontSize: "10px",
                         letterSpacing: "3px",
-                        color: "#ee0653",
+                        color: "#fb2c36",
                       }}
                     >
                       Almost there
@@ -885,7 +873,7 @@ const Artist = () => {
                     src={URL.createObjectURL(profileImage)}
                     alt=""
                     className="w-24 h-24 rounded-full object-cover"
-                    style={{ border: "3px solid #ee0653" }}
+                    style={{ border: "3px solid #fb2c36" }}
                   />
                   <div>
                     <h3
@@ -934,7 +922,7 @@ const Artist = () => {
                         className="px-4 py-2 rounded-full text-sm"
                         style={{
                           background: "rgba(238,6,83,0.08)",
-                          color: "#ee0653",
+                          color: "#fb2c36",
                         }}
                       >
                         {type}
@@ -952,7 +940,7 @@ const Artist = () => {
                     className="w-9 h-9 rounded-full flex items-center justify-center"
                     style={{ background: "rgba(238,6,83,0.1)" }}
                   >
-                    <span style={{ color: "#ee0653" }}>✓</span>
+                    <span style={{ color: "#fb2c36" }}>✓</span>
                   </div>
                   <div>
                     <p

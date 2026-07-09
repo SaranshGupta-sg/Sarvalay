@@ -168,7 +168,7 @@ const Navbar = () => {
                 <span
                   className="absolute -bottom-1 left-0 h-[1.5px] w-0 group-hover:w-full transition-all duration-400 rounded-full"
                   style={{
-                    background: "#ee0653",
+                    background: "#fb2c36",
                     transitionDuration: "350ms",
                   }}
                 />
@@ -287,13 +287,13 @@ const Navbar = () => {
                 key={i}
                 ref={(el) => (mobileLinksRef.current[i] = el)}
                 onClick={() => handleNavClick(link.to)}
-                className="roboto-condensed relative text-3xl font-semibold text-black cursor-pointer group transition-colors duration-200 hover:text-[#ee0653]"
+                className="roboto-condensed relative text-3xl font-semibold text-black cursor-pointer group transition-colors duration-200 hover:text-[#fb2c36]"
               >
                 {link.name}
 
                 <span
                   className="absolute -bottom-2 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-300 rounded-full"
-                  style={{ background: "#ee0653" }}
+                  style={{ background: "#fb2c36" }}
                 />
               </button>
             ))}

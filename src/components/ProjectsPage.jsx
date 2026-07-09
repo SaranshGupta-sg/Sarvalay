@@ -167,7 +167,7 @@ const ProjectCard = ({ project, index, currentImg, onPrev, onNext }) => {
               style={{
                 width: i === currentImg ? "20px" : "6px",
                 height: "6px",
-                background: i === currentImg ? "#ee0653" : "rgba(255,255,255,0.4)",
+                background: i === currentImg ? "#fb2c36" : "rgba(255,255,255,0.4)",
               }}
             />
           ))}
@@ -193,7 +193,7 @@ const ProjectCard = ({ project, index, currentImg, onPrev, onNext }) => {
           </h2>
           <span
             className="roboto-condensed shrink-0 mt-1"
-            style={{ fontSize: "11px", letterSpacing: "2px", color: "#ee0653" }}
+            style={{ fontSize: "11px", letterSpacing: "2px", color: "#fb2c36" }}
           >
             {project.year}
           </span>
@@ -205,7 +205,7 @@ const ProjectCard = ({ project, index, currentImg, onPrev, onNext }) => {
           style={{
             height: "1.5px",
             width: hovered ? "64px" : "32px",
-            background: "linear-gradient(to right, #ee0653, rgba(238,6,83,0.3))",
+            background: "linear-gradient(to right, #fb2c36, rgba(238,6,83,0.3))",
           }}
         />
 
@@ -300,7 +300,7 @@ const ProjectsPage = () => {
           <div
             ref={lineRef}
             className="rounded-full mt-5"
-            style={{ width: "80px", height: "4px", background: "linear-gradient(to right, #ee0653, #C9A847)" }}
+            style={{ width: "80px", height: "4px", background: "linear-gradient(to right, #fb2c36, #C9A847)" }}
           />
         </div>
 
