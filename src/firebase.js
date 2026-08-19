@@ -5,14 +5,13 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAt_QK8gvfm0T49mcSik1EcSlHxM6jXMVc",
-  authDomain: "sarvalay-98f4e.firebaseapp.com",
-  databaseURL:
-    "https://sarvalay-98f4e-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "sarvalay-98f4e",
-  storageBucket: "sarvalay-98f4e.firebasestorage.app",
-  messagingSenderId: "963251403450",
-  appId: "1:963251403450:web:85c01fc6fa9b3905002083",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
