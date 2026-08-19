@@ -263,8 +263,8 @@ const Artist = () => {
       await addDoc(collection(db, "artistApplications"), artistData);
 
       await emailjs.send(
-        "service_52y6oom",
-        "template_alevyqd",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID_PAGE1,
         {
           to_email: "sarvalayworld@gmail.com",
           message: "Sarvalay Artist Portfolio Received",
@@ -280,7 +280,7 @@ const Artist = () => {
           govtIdURL: artistData.govtIdURL,
           selectedGovtId: artistData.selectedGovtId,
         },
-        "rJ7snfOydxb6-ezAG",
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       );
 
       alert("Application submitted successfully!");

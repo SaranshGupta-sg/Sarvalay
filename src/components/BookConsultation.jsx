@@ -233,8 +233,8 @@ const BookConsultation = () => {
       );
 
       await emailjs.send(
-        "service_52y6oom",
-        "template_9v1najd",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID_PAGE2,
         {
           to_email: "sarvalayworld@gmail.com",
           message: "Sarvalay Consultation request Received",
@@ -247,7 +247,7 @@ const BookConsultation = () => {
           additionalRequirements: consultationData.additionalRequirements,
           zipURL: consultationData.zipURL,
         },
-        "rJ7snfOydxb6-ezAG",
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       );
 
       setSubmitted(true);
