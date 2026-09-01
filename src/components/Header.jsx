@@ -14,7 +14,7 @@ const Header = () => {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.4) 65%, transparent 100%)",
+            "linear-gradient(to right, rgba(0,0,0,0.79) 0%, rgba(0,0,0,0.65) 35%, rgba(0,0,0,0.3) 65%, transparent 100%)",
         }}
       ></div>
 

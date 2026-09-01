@@ -5,8 +5,22 @@ import emailjs from "@emailjs/browser";
 import { db, storage } from "../firebase";
 import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
+
+const artTypes = [
+  "Madhubani Art",
+  "Warli Art",
+  "Pattachitra",
+  "Kalamkari",
+  "Gond Art",
+  "Phad Art",
+  "Tanjore Art",
+  "Abstract Art",
+  "Graffiti & Street Art",
+  "Mandala Art",
+  "Other",
+];
 
 const spaceTypeOptions = [
   { value: "", label: "Select Space Type", disabled: true },
@@ -139,7 +153,14 @@ const BookConsultation = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [dragOver, setDragOver] = useState(false);
+  const [selectedArtTypes, setSelectedArtTypes] = useState([]);
+  const toggleArtType = (type) => {
+    setSelectedArtTypes((prev) =>
+      prev.includes(type) ? prev.filter((t) => t !== type) : [...prev, type],
+    );
+  };
   const pageRef = useRef(null);
+
   const headRef = useRef(null);
   const lineRef = useRef(null);
 
@@ -223,6 +244,7 @@ const BookConsultation = () => {
         preferredTimeline: form.preferredTimeline.value,
         budget: form.budget.value,
         additionalRequirements: form.additionalRequirements.value,
+        preferredArtTypes: selectedArtTypes,
         zipURL,
         createdAt: new Date(),
       };
@@ -245,6 +267,7 @@ const BookConsultation = () => {
           spaceType: consultationData.spaceType,
           projectLocation: consultationData.projectLocation,
           additionalRequirements: consultationData.additionalRequirements,
+          preferredArtTypes: consultationData.preferredArtTypes.join(", "),
           zipURL: consultationData.zipURL,
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
@@ -253,6 +276,7 @@ const BookConsultation = () => {
       setSubmitted(true);
       form.reset();
       setFiles([]);
+      setSelectedArtTypes([]);
     } catch (error) {
       console.log(error);
       alert("Submission failed");
@@ -406,10 +430,19 @@ const BookConsultation = () => {
 
               <FieldWrapper label="Phone" required index={2}>
                 <FocusInput
-                  type="text"
+                  type="tel"
                   name="phone"
                   required
-                  placeholder="Enter your phone number"
+                  inputMode="numeric"
+                  maxLength={10}
+                  pattern="[6-9][0-9]{9}"
+                  title="Enter a valid 10-digit Indian mobile number"
+                  placeholder="Enter your 10-digit mobile number"
+                  onInput={(event) => {
+                    event.currentTarget.value = event.currentTarget.value
+                      .replace(/\D/g, "")
+                      .slice(0, 10);
+                  }}
                 />
               </FieldWrapper>
 
@@ -522,7 +555,71 @@ const BookConsultation = () => {
                 />
               </FieldWrapper>
 
-              <FieldWrapper label="Project Location" required={false} index={6}>
+              <FieldWrapper label="Art Type" required index={6}>
+                {/* Preferred Art Type */}
+                <motion.div
+                  initial={{ opacity: 0, y: 32 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    duration: 0.65,
+                    delay: 10 * 0.05,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="mb-9"
+                >
+                  <div className="flex flex-wrap gap-2.5">
+                    {artTypes.map((type, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => toggleArtType(type)}
+                        className="roboto-condensed cursor-pointer transition-all duration-300"
+                        style={{
+                          padding: "9px 18px",
+                          borderRadius: "999px",
+                          fontSize: "0.88rem",
+                          background: selectedArtTypes.includes(type)
+                            ? "linear-gradient(135deg,#fb2c36,#c4003f)"
+                            : "#fff",
+                          color: selectedArtTypes.includes(type)
+                            ? "#fff"
+                            : "#444",
+                          border: selectedArtTypes.includes(type)
+                            ? "1px solid #fb2c36"
+                            : "1px solid rgba(0,0,0,0.12)",
+                          boxShadow: selectedArtTypes.includes(type)
+                            ? "0 4px 14px rgba(238,6,83,0.28)"
+                            : "none",
+                        }}
+                      >
+                        {type}
+                      </button>
+                    ))}
+                  </div>
+
+                  <AnimatePresence>
+                    {selectedArtTypes.includes("Other") && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="mt-5 overflow-hidden"
+                      >
+                        <FocusInput
+                          type="text"
+                          name="otherArtistType"
+                          placeholder="Tell us your artist type"
+                          required
+                        />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              </FieldWrapper>
+
+              <FieldWrapper label="Project Location" required={false} index={7}>
                 <FocusSelect
                   name="projectLocation"
                   defaultValue=""
@@ -530,18 +627,30 @@ const BookConsultation = () => {
                 />
               </FieldWrapper>
 
-              <FieldWrapper label="Estimated Area" required={false} index={7}>
+              <FieldWrapper
+                label="Estimated Area (sq.ft)"
+                required={false}
+                index={8}
+              >
                 <FocusInput
-                  type="text"
+                  type="number"
                   name="estimatedArea"
-                  placeholder="Example: 1200 sq.ft"
+                  min="1"
+                  step="1"
+                  inputMode="numeric"
+                  placeholder="Example: 1200"
+                  onInput={(event) => {
+                    if (Number(event.currentTarget.value) < 1) {
+                      event.currentTarget.value = "";
+                    }
+                  }}
                 />
               </FieldWrapper>
 
               <FieldWrapper
                 label="Preferred Timeline"
                 required={false}
-                index={8}
+                index={9}
               >
                 <FocusInput
                   type="date"
@@ -550,7 +659,7 @@ const BookConsultation = () => {
                 />
               </FieldWrapper>
 
-              <FieldWrapper label="Budget" required={false} index={9}>
+              <FieldWrapper label="Budget" required={false} index={10}>
                 <FocusSelect
                   name="budget"
                   defaultValue=""
@@ -561,7 +670,7 @@ const BookConsultation = () => {
               <FieldWrapper
                 label="Additional Requirements"
                 required={false}
-                index={10}
+                index={11}
               >
                 <FocusInput
                   tag="textarea"

@@ -425,10 +425,19 @@ const Artist = () => {
             <div>
               <SectionLabel required>Phone</SectionLabel>
               <FocusInput
-                type="text"
+                type="tel"
                 name="phone"
-                placeholder="Enter your phone number"
                 required
+                inputMode="numeric"
+                maxLength={10}
+                pattern="[6-9][0-9]{9}"
+                title="Enter a valid 10-digit Indian mobile number"
+                placeholder="Enter your 10-digit mobile number"
+                onInput={(event) => {
+                  event.currentTarget.value = event.currentTarget.value
+                    .replace(/\D/g, "")
+                    .slice(0, 10);
+                }}
               />
             </div>
             <div>
