@@ -7,6 +7,7 @@ import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
+import AHeader from "./AHeader";
 
 const artistTypes = [
   "Madhubani Art",
@@ -82,7 +83,7 @@ const FocusInput = ({ tag: Tag = "input", ...props }) => {
   );
 };
 
-const Pill = ({ active, onClick, children, accent = false }) => (
+const Pill = ({ active, onClick, children = false }) => (
   <button
     type="button"
     onClick={onClick}
@@ -311,74 +312,9 @@ const Artist = () => {
   return (
     <div ref={pageRef} className="min-h-screen bg-white text-black">
       <Navbar />
+     <AHeader/>
 
       <section className="roboto-condensed pt-24 sm:pt-28 lg:pt-32 pb-24 px-5 sm:px-8 md:px-12 lg:px-20">
-        {/* ── Heading ── */}
-        <div className="max-w-6xl mb-16 sm:mb-20">
-          <motion.div
-            initial={{ opacity: 0, x: -16 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="flex items-center gap-3 mb-5"
-          >
-            <div className="w-5 h-px bg-red-500" />
-            <span
-              className="roboto-condensed uppercase text-[10px] tracking-[5px] font-medium"
-              style={{ color: "#fb2c36" }}
-            >
-              Join Our Artist Network
-            </span>
-          </motion.div>
-
-          <div ref={headRef} className="overflow-visible">
-            <h1
-              className="font-semibold leading-none tracking-tight"
-              style={{ fontSize: "clamp(2.6rem,7vw,6.2rem)" }}
-            >
-              {"Ready to create".split("").map((ch, i) => (
-                <span
-                  key={i}
-                  className="char inline-block"
-                  style={{ whiteSpace: ch === " " ? "pre" : "normal" }}
-                >
-                  {ch === " " ? "\u00A0" : ch}
-                </span>
-              ))}
-              <br />
-
-              <span className="char inline-block">something&nbsp;</span>
-
-              <span className="text-[#ee0640] whitespace-nowrap">
-                {"extraordinary?".split("").map((ch, i) => (
-                  <span key={i} className="char inline-block">
-                    {ch}
-                  </span>
-                ))}
-              </span>
-            </h1>
-          </div>
-
-          <div
-            ref={lineRef}
-            className="rounded-full mt-5"
-            style={{
-              width: "80px",
-              height: "4px",
-              background: "linear-gradient(to right,#fb2c36,#C9A847)",
-            }}
-          />
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.7 }}
-            className="mt-7 text-zinc-500 max-w-xl leading-relaxed"
-            style={{ fontSize: "clamp(0.88rem,1.2vw,1.05rem)" }}
-          >
-            Join our creative network and collaborate with brands, creators, and
-            visionary teams from around the world.
-          </motion.p>
-        </div>
 
         {/* ── Form ── */}
         <form

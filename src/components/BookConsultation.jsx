@@ -7,6 +7,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
+import BHeader from "./BHeader";
 
 const artTypes = [
   "Madhubani Art",
@@ -288,6 +289,7 @@ const BookConsultation = () => {
   return (
     <div ref={pageRef} className="min-h-screen bg-white text-black">
       <Navbar />
+      <BHeader />
 
       {/* Success modal */}
       {submitted && (
@@ -340,71 +342,6 @@ const BookConsultation = () => {
 
       <section className="pt-24 sm:pt-28 lg:pt-32 pb-24 px-5 sm:px-8 md:px-12 lg:px-20">
         <div className="max-w-6xl mx-auto">
-          {/* ── Heading ── */}
-          <div className="mb-16 sm:mb-20">
-            <motion.div
-              initial={{ opacity: 0, x: -16 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="flex items-center gap-3 mb-5"
-            >
-              <div className="w-5 h-px bg-red-500" />
-              <span
-                className="roboto-condensed uppercase text-[14px] tracking-[5px] font-medium"
-                style={{ color: "#fb2c36" }}
-              >
-                Book Consultation
-              </span>
-            </motion.div>
-
-            <div ref={headRef} className="overflow-hidden pb-3">
-              <h1
-                className="roboto-condensed font-semibold leading-[1.05] tracking-tight"
-                style={{ fontSize: "clamp(2.8rem, 8vw, 7rem)" }}
-              >
-                {"Let's build your".split("").map((ch, i) => (
-                  <span
-                    key={i}
-                    className="char inline-block"
-                    style={{ whiteSpace: ch === " " ? "pre" : "normal" }}
-                  >
-                    {ch === " " ? "\u00A0" : ch}
-                  </span>
-                ))}
-                <br />
-                {"next big project.".split("").map((ch, i) => (
-                  <span
-                    key={i + 30}
-                    className="char inline-block"
-                    style={{ whiteSpace: ch === " " ? "pre" : "normal" }}
-                  >
-                    {ch === " " ? "\u00A0" : ch}
-                  </span>
-                ))}
-              </h1>
-            </div>
-
-            <div
-              ref={lineRef}
-              className="rounded-full mt-5"
-              style={{
-                width: "80px",
-                height: "4px",
-                background: "linear-gradient(to right,#fb2c36,#C9A847)",
-              }}
-            />
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.7 }}
-              className="roboto-condensed mt-7 text-zinc-500 max-w-xl leading-relaxed"
-              style={{ fontSize: "clamp(0.88rem,1.2vw,1.05rem)" }}
-            >
-              Tell us about your vision, your space, and your requirements.
-              We'll help transform your ideas into a premium art experience.
-            </motion.p>
-          </div>
 
           {/* ── Two column layout ── */}
           <div className="grid lg:grid-cols-[1fr_360px] gap-16 lg:gap-20 items-start">
