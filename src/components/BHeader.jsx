@@ -45,7 +45,7 @@ const BHeader = () => {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, rgba(0,0,0,0.79) 0%, rgba(0,0,0,0.65) 35%, rgba(0,0,0,0.3) 65%, transparent 100%)",
+            "linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.60) 32%, rgba(0,0,0,0.3) 62%, transparent 100%)",
         }}
       />
 
@@ -112,16 +112,7 @@ const BHeader = () => {
             </h1>
           </div>
 
-          {/* Gradient Line */}
-          <div
-            ref={lineRef}
-            className="rounded-full mt-5"
-            style={{
-              width: "80px",
-              height: "4px",
-              background: "linear-gradient(to right,#fb2c36,#C9A847)",
-            }}
-          />
+          
 
           {/* Description */}
           <motion.p

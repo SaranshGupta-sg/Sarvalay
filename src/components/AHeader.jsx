@@ -45,7 +45,7 @@ const AHeader = () => {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, rgba(0,0,0,0.79) 0%, rgba(0,0,0,0.65) 35%, rgba(0,0,0,0.3) 65%, transparent 100%)",
+            "linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.60) 32%, rgba(0,0,0,0.3) 62%, transparent 100%)",
         }}
       />
 
@@ -109,6 +109,8 @@ const AHeader = () => {
               </span>
             </h1>
           </div>
+
+          
 
           {/* Description */}
           <motion.p
